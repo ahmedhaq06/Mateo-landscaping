@@ -29,10 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks.style.top = '100%';
         navLinks.style.left = '0';
         navLinks.style.width = '100%';
-        navLinks.style.background = '#FFFFFF';
+        navLinks.style.background = '#12151A';
         navLinks.style.padding = '20px';
-        navLinks.style.borderBottom = '1px solid rgba(184, 134, 11, 0.2)';
-        navLinks.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
+        navLinks.style.borderBottom = '1px solid rgba(212, 175, 55, 0.25)';
+        navLinks.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
       }
     });
   }
@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 5. MULTI-STEP LEAD FORM SLIDER WIZARD
   // ===================================================================
   let currentStep = 1;
-  const totalSteps = 4;
+  const totalSteps = 3;
 
   const stepPanels = document.querySelectorAll('.form-step-panel');
   const stepNodes = document.querySelectorAll('.step-node');
@@ -356,4 +356,126 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!isActive) item.classList.add('active');
     });
   });
+
+  // ===================================================================
+  // 7. SERVICE MATRIX INTERACTIVE SHOWCASE HANDLER
+  // ===================================================================
+  const matrixItems = document.querySelectorAll('.matrix-item');
+  const matrixDisplay = document.getElementById('matrixDisplay');
+  const matrixIndexTag = document.getElementById('matrixIndexTag');
+  const matrixTitle = document.getElementById('matrixTitle');
+  const matrixDesc = document.getElementById('matrixDesc');
+  const matrixBadges = document.getElementById('matrixBadges');
+  const matrixTimeline = document.getElementById('matrixTimeline');
+  const matrixWarranty = document.getElementById('matrixWarranty');
+  const matrixBars = document.getElementById('matrixBars');
+
+  if (matrixItems.length && matrixDisplay) {
+    matrixItems.forEach(item => {
+      item.addEventListener('mouseenter', () => activateMatrixItem(item));
+      item.addEventListener('click', () => activateMatrixItem(item));
+    });
+
+    function activateMatrixItem(item) {
+      matrixItems.forEach(el => el.classList.remove('active'));
+      item.classList.add('active');
+
+      const bg = item.getAttribute('data-bg');
+      const index = item.getAttribute('data-index');
+      const title = item.getAttribute('data-title');
+      const desc = item.getAttribute('data-desc');
+      const badge1 = item.getAttribute('data-badge1');
+      const badge2 = item.getAttribute('data-badge2');
+      const timeline = item.getAttribute('data-timeline');
+      const warranty = item.getAttribute('data-warranty');
+      const barsCount = parseInt(item.getAttribute('data-bars')) || 5;
+
+      if (bg) matrixDisplay.style.backgroundImage = `url('${bg}')`;
+      if (index && matrixIndexTag) matrixIndexTag.textContent = index;
+      if (title && matrixTitle) matrixTitle.textContent = title;
+      if (desc && matrixDesc) matrixDesc.textContent = desc;
+      if (timeline && matrixTimeline) matrixTimeline.textContent = timeline;
+      if (warranty && matrixWarranty) matrixWarranty.textContent = warranty;
+
+      if (badge1 && badge2 && matrixBadges) {
+        matrixBadges.innerHTML = `
+          <span class="matrix-badge">${badge1}</span>
+          <span class="matrix-badge">${badge2}</span>
+        `;
+      }
+
+      if (matrixBars) {
+        let barsHtml = '';
+        for (let i = 0; i < 5; i++) {
+          barsHtml += `<div class="matrix-bar ${i < barsCount ? '' : 'empty'}"></div>`;
+        }
+        matrixBars.innerHTML = barsHtml;
+      }
+    }
+  }
+
+  // ===================================================================
+  // 8. SMART SMOOTH PAGE NAVIGATION & ANCHOR SCROLL HANDLER
+  // ===================================================================
+  const internalLinks = document.querySelectorAll('a[href]');
+
+  internalLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+
+      // Ignore external links, mailto, tel, javascript, or target=_blank
+      if (!href || href.startsWith('tel:') || href.startsWith('mailto:') || href.startsWith('http') || link.getAttribute('target') === '_blank') {
+        return;
+      }
+
+      // Check current page filename
+      const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+
+      // Case 1: Pure hash link on current page (e.g. #work, #services)
+      if (href.startsWith('#')) {
+        const targetId = href.substring(1);
+        const targetEl = document.getElementById(targetId);
+        if (targetEl) {
+          e.preventDefault();
+          targetEl.scrollIntoView({ behavior: 'smooth' });
+        }
+        return;
+      }
+
+      // Case 2: Link with page and hash (e.g. index.html#work)
+      if (href.includes('#')) {
+        const parts = href.split('#');
+        const targetPage = parts[0];
+        const targetHash = parts[1];
+
+        // If target page is the current page, scroll smoothly to target element
+        if (targetPage === currentPath || (targetPage === 'index.html' && (currentPath === '' || currentPath === 'index.html'))) {
+          const targetEl = document.getElementById(targetHash);
+          if (targetEl) {
+            e.preventDefault();
+            targetEl.scrollIntoView({ behavior: 'smooth' });
+            return;
+          }
+        }
+      }
+
+      // Case 3: Navigation to a different page (e.g., financing.html, reviews.html)
+      e.preventDefault();
+      document.body.classList.add('page-exiting');
+
+      setTimeout(() => {
+        window.location.href = href;
+      }, 250);
+    });
+  });
+
+  // ===================================================================
+  // 9. BACK TO TOP BUTTON HANDLER
+  // ===================================================================
+  const backToTopBtn = document.getElementById('backToTopBtn');
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 });

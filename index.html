@@ -48,10 +48,22 @@
 
 <body>
 
+  <!-- TOP LICENSE & TRUST BAR -->
+  <div class="top-trust-bar">
+    <div class="container top-trust-container">
+      <div class="trust-license-badge">
+        <i class="fas fa-shield-check"></i> Licensed, Bonded & Insured | ROC #345892
+      </div>
+      <div class="trust-quick-links">
+        <span><i class="fas fa-star" style="color: var(--gold-primary);"></i> 150+ 5-Star Reviews</span>
+      </div>
+    </div>
+  </div>
+
   <!-- NAVBAR -->
   <nav class="navbar">
     <div class="container nav-container">
-      <a href="#hero" class="brand-logo">
+      <a href="index.html" class="brand-logo">
         <img src="images/logo.png" alt="Mateo Landscaping LLC Logo">
         <div class="brand-text">
           <span class="brand-name">MATEO LANDSCAPING</span>
@@ -62,8 +74,9 @@
       <ul class="nav-links">
         <li><a href="#services">Services</a></li>
         <li><a href="#work">Our Work</a></li>
-        <li><a href="#materials">3D Materials</a></li>
         <li><a href="#why-us">Why Mateo</a></li>
+        <li><a href="financing.html">Financing</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
 
@@ -71,7 +84,7 @@
         <a href="tel:4803886560" class="phone-link">
           <i class="fas fa-phone-alt"></i> (480) 388-6560
         </a>
-        <a href="#lead-form" class="btn-primary">Free Quote <i class="fas fa-arrow-right"></i></a>
+        <a href="index.html#lead-form" class="btn-primary">Free Quote <i class="fas fa-arrow-right"></i></a>
       </div>
 
       <button class="mobile-toggle" aria-label="Toggle Menu">
@@ -137,87 +150,127 @@
     </div>
   </section>
 
-  <!-- SERVICES SECTION -->
-  <section id="services" class="services-section">
+  <!-- SERVICES SECTION: SERVICE MATRIX SHOWCASE -->
+  <section id="services" class="service-matrix-section">
+    <div class="matrix-grid-bg"></div>
     <div class="container">
-      <div style="text-align: center;">
-        <span class="section-tag"><i class="fas fa-gem"></i> Master Hardscaping Services</span>
-        <h2 class="section-title">Built For The Sonoran Climate. Designed For Luxury.</h2>
-        <p class="section-subtitle">We focus on long-lasting structural hardscaping, premium stone work, and high-end
-          outdoor entertainment spaces.</p>
+      <div class="matrix-header">
+        <div class="matrix-header-left">
+          <span class="matrix-tag">CAPABILITIES</span>
+          <h2 class="matrix-title">Service Matrix</h2>
+        </div>
+        <span class="matrix-index-tag" id="matrixIndexTag">INDEX 01 / 06</span>
       </div>
 
-      <div class="services-grid">
-        <!-- Service 1 -->
-        <div class="service-card">
-          <div class="service-icon-box"><i class="fas fa-cubes"></i></div>
-          <h3>Pavers & Travertine</h3>
-          <p>Custom travertine, concrete pavers, driveways, patios, and walkways engineered to withstand Arizona's
-            intense summer heat without cracking.</p>
+      <div class="service-matrix-container">
+        <!-- LEFT SIDEBAR LIST -->
+        <div class="matrix-sidebar">
+          <div class="matrix-item active" data-index="INDEX 01 / 06" data-title="Pavers & Travertine"
+            data-desc="Custom travertine, concrete pavers, driveways, patios, and walkways engineered to withstand Arizona's intense summer heat without cracking."
+            data-bg="images/pavers-project.jpg" data-badge1="PROFESSIONAL GRADE" data-badge2="STRUCTURAL"
+            data-timeline="3 - 5 Days" data-warranty="Lifetime Craftsmanship" data-bars="5">
+            <div class="matrix-item-left">
+              <span class="matrix-item-num">01</span>
+              <span class="matrix-item-title">Pavers & Travertine</span>
+            </div>
+            <i class="fas fa-arrow-up-right matrix-item-arrow"></i>
+          </div>
+
+          <div class="matrix-item" data-index="INDEX 02 / 06" data-title="Artificial Turf Installation"
+            data-desc="Ultra-realistic, heat-dissipating synthetic turf lawns. Perfect for year-round green backyards, pet areas, and putting greens with zero watering."
+            data-bg="images/turf-project.jpg" data-badge1="HEAT SHIELD" data-badge2="ZERO WATERING"
+            data-timeline="2 - 3 Days" data-warranty="15-Year Manufacturer" data-bars="5">
+            <div class="matrix-item-left">
+              <span class="matrix-item-num">02</span>
+              <span class="matrix-item-title">Artificial Turf Installation</span>
+            </div>
+            <i class="fas fa-arrow-up-right matrix-item-arrow"></i>
+          </div>
+
+          <div class="matrix-item" data-index="INDEX 03 / 06" data-title="Coping & Pool Deck Tile"
+            data-desc="Seamless travertine pool coping tile and non-slip pool surround stone installations engineered to elevate your resort-style swimming pool."
+            data-bg="images/hero-bg.jpg" data-badge1="COOL TOUCH" data-badge2="RESORT FINISH" data-timeline="3 - 4 Days"
+            data-warranty="10-Year Water Seal" data-bars="4">
+            <div class="matrix-item-left">
+              <span class="matrix-item-num">03</span>
+              <span class="matrix-item-title">Coping & Pool Deck Tile</span>
+            </div>
+            <i class="fas fa-arrow-up-right matrix-item-arrow"></i>
+          </div>
+
+          <div class="matrix-item" data-index="INDEX 04 / 06" data-title="Barbecue & Outdoor Kitchens"
+            data-desc="Custom stacked stone grill islands, outdoor bar seating, built-in stainless steel barbecues, and complete outdoor dining setups."
+            data-bg="images/bbq-kitchen-project.jpg" data-badge1="CUSTOM MASONRY" data-badge2="GAS CONNECTED"
+            data-timeline="4 - 7 Days" data-warranty="Included" data-bars="5">
+            <div class="matrix-item-left">
+              <span class="matrix-item-num">04</span>
+              <span class="matrix-item-title">Barbecue & Outdoor Kitchens</span>
+            </div>
+            <i class="fas fa-arrow-up-right matrix-item-arrow"></i>
+          </div>
+
+          <div class="matrix-item" data-index="INDEX 05 / 06" data-title="Landscape & Accent Lighting"
+            data-desc="Architectural low-voltage LED landscape lighting. Uplighting for desert flora, path lighting, and illuminated hardscape accents for evening ambiance."
+            data-bg="images/after-yard.jpg" data-badge1="LOW VOLTAGE" data-badge2="SMART CONTROL"
+            data-timeline="1 - 2 Days" data-warranty="5-Year LED Fixtures" data-bars="4">
+            <div class="matrix-item-left">
+              <span class="matrix-item-num">05</span>
+              <span class="matrix-item-title">Landscape & Accent Lighting</span>
+            </div>
+            <i class="fas fa-arrow-up-right matrix-item-arrow"></i>
+          </div>
+
+          <div class="matrix-item" data-index="INDEX 06 / 06" data-title="Retaining Walls & Block Work"
+            data-desc="Structural block walls, terraced stone retaining systems, and privacy masonry walls built for maximum durability and elevation control."
+            data-bg="images/before-yard.jpg" data-badge1="STRUCTURAL MASONRY" data-badge2="ELEVATION CONTROL"
+            data-timeline="3 - 6 Days" data-warranty="Lifetime Structural" data-bars="5">
+            <div class="matrix-item-left">
+              <span class="matrix-item-num">06</span>
+              <span class="matrix-item-title">Retaining Walls & Block Work</span>
+            </div>
+            <i class="fas fa-arrow-up-right matrix-item-arrow"></i>
+          </div>
         </div>
 
-        <!-- Service 2 -->
-        <div class="service-card">
-          <div class="service-icon-box"><i class="fas fa-seedling"></i></div>
-          <h3>Artificial Turf Installation</h3>
-          <p>Ultra-realistic, heat-dissipating synthetic turf lawns. Perfect for year-round green backyards, pet areas,
-            and putting greens with zero watering.</p>
-        </div>
+        <!-- RIGHT FEATURE PANEL SHOWCASE -->
+        <div class="matrix-display" id="matrixDisplay" style="background-image: url('images/pavers-project.jpg');">
+          <div class="matrix-display-overlay"></div>
+          <div class="matrix-display-content">
+            <div class="matrix-badges" id="matrixBadges">
+              <span class="matrix-badge">PROFESSIONAL GRADE</span>
+              <span class="matrix-badge">STRUCTURAL</span>
+            </div>
+            <h3 class="matrix-display-title" id="matrixTitle">Pavers & Travertine</h3>
+            <div class="matrix-display-desc-wrap">
+              <div class="matrix-accent-bar"></div>
+              <p class="matrix-display-desc" id="matrixDesc">
+                Custom travertine, concrete pavers, driveways, patios, and walkways engineered to withstand Arizona's
+                intense summer heat without cracking.
+              </p>
+            </div>
 
-        <!-- Service 3 -->
-        <div class="service-card">
-          <div class="service-icon-box"><i class="fas fa-water"></i></div>
-          <h3>Coping & Pool Deck Tile</h3>
-          <p>Seamless travertine pool coping tile and non-slip pool surround stone installations to elevate your
-            resort-style swimming pool.</p>
-        </div>
-
-        <!-- Service 4 -->
-        <div class="service-card">
-          <div class="service-icon-box"><i class="fas fa-fire-burner"></i></div>
-          <h3>Barbecue & Outdoor Kitchens</h3>
-          <p>Custom stacked stone grill islands, outdoor bar seating, built-in stainless steel barbecues, and complete
-            outdoor dining setups.</p>
-        </div>
-
-        <!-- Service 5 -->
-        <div class="service-card">
-          <div class="service-icon-box"><i class="fas fa-lightbulb"></i></div>
-          <h3>Landscape & Accent Lighting</h3>
-          <p>Architectural low-voltage LED landscape lighting. Uplighting for desert flora, path lighting, and
-            illuminated hardscape accents for evening ambiance.</p>
-        </div>
-
-        <!-- Service 6 -->
-        <div class="service-card">
-          <div class="service-icon-box"><i class="fas fa-faucet-drip"></i></div>
-          <h3>Irrigation Systems</h3>
-          <p>Smart drip irrigation and precision water delivery tailored for desert plants, trees, and cacti to prevent
-            water waste and optimize plant health.</p>
-        </div>
-
-        <!-- Service 7 -->
-        <div class="service-card">
-          <div class="service-icon-box"><i class="fas fa-mountain-sun"></i></div>
-          <h3>Desert Plants & Xeriscaping</h3>
-          <p>Drought-tolerant native Sonoran desert planting including Agave, Saguaro, Palo Verde, and decorative river
-            rock accents.</p>
-        </div>
-
-        <!-- Service 8 -->
-        <div class="service-card">
-          <div class="service-icon-box"><i class="fas fa-fire"></i></div>
-          <h3>Fire Pits & Fireplaces</h3>
-          <p>Custom stone fire features, modern gas fire tables, and outdoor masonry fireplaces designed for desert
-            evening gatherings.</p>
-        </div>
-
-        <!-- Service 9 -->
-        <div class="service-card">
-          <div class="service-icon-box"><i class="fas fa-layer-group"></i></div>
-          <h3>Retaining Walls & Block Work</h3>
-          <p>Structural block walls, terraced stone retaining systems, and privacy masonry walls built for durability
-            and elevation control.</p>
+            <div class="matrix-stats-row">
+              <div class="matrix-stat-item">
+                <span class="matrix-stat-lbl">SERVICE LEVEL</span>
+                <div class="matrix-bars" id="matrixBars">
+                  <div class="matrix-bar"></div>
+                  <div class="matrix-bar"></div>
+                  <div class="matrix-bar"></div>
+                  <div class="matrix-bar"></div>
+                  <div class="matrix-bar"></div>
+                </div>
+              </div>
+              <div class="matrix-stat-item">
+                <span class="matrix-stat-lbl">EST TIMELINE</span>
+                <span class="matrix-stat-val" id="matrixTimeline">3 - 5 Days</span>
+              </div>
+              <div class="matrix-stat-item">
+                <span class="matrix-stat-lbl">WARRANTY</span>
+                <span class="matrix-stat-val" id="matrixWarranty">Lifetime Craftsmanship</span>
+              </div>
+              <a href="#lead-form" class="matrix-cta-btn">INQUIRE DETAILS <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -235,8 +288,8 @@
       <div class="ba-slider-container">
         <!-- After Image (Bottom Layer) -->
         <div class="ba-image-after">
-          <img src="images/hero-bg.jpg" alt="Finished Travertine Pool Deck & Backyard">
-          <span class="ba-badge ba-badge-after"><i class="fas fa-sparkles"></i> AFTER: Luxury Travertine Pool
+          <img src="images/after-yard.jpg" alt="Finished Travertine Pool Deck & Backyard Transformation">
+          <span class="ba-badge ba-badge-after"><i class="fas fa-sparkles"></i> AFTER: Luxury Travertine & Turf
             Resort</span>
         </div>
 
@@ -256,7 +309,7 @@
     </div>
   </section>
 
-  <!-- PORTFOLIO GALLERY SECTION WITH 3D TILT HOVER -->
+  <!-- PORTFOLIO GALLERY SECTION -->
   <section id="work" class="gallery-section">
     <div class="container">
       <div style="text-align: center;">
@@ -266,29 +319,32 @@
 
       <div class="gallery-grid">
         <div class="gallery-card">
-          <img src="images/gallery-1.jpg" alt="Outdoor Kitchen & Travertine Pavers">
+          <img src="images/pavers-project.jpg" alt="Pavers & Travertine Driveway Project">
           <div class="gallery-overlay">
             <span class="gallery-category">Scottsdale Luxury Estate</span>
-            <h3 class="gallery-title">Travertine Deck & Barbecue Kitchen</h3>
-            <p class="gallery-desc">Complete backyard remodel featuring custom stone BBQ island and cedar pergola.</p>
+            <h3 class="gallery-title">Interlocking Pavers & Travertine Patio</h3>
+            <p class="gallery-desc">Custom herringbone paver driveway and patio engineered for 115°F Arizona summer
+              heat.</p>
           </div>
         </div>
 
         <div class="gallery-card">
-          <img src="images/gallery-2.jpg" alt="Artificial Turf & Pool Coping">
+          <img src="images/turf-project.jpg" alt="Artificial Turf Lawn Project">
           <div class="gallery-overlay">
             <span class="gallery-category">Paradise Valley Residence</span>
-            <h3 class="gallery-title">Synthetic Turf & Pool Coping</h3>
-            <p class="gallery-desc">Modern pool tile coping paired with precision-cut luxury turf surrounds.</p>
+            <h3 class="gallery-title">Synthetic Turf & Backyard Putting Green</h3>
+            <p class="gallery-desc">Ultra-realistic heat-shield synthetic turf paired with precision travertine borders.
+            </p>
           </div>
         </div>
 
         <div class="gallery-card">
-          <img src="images/gallery-3.jpg" alt="Fire Pit & Desert Lighting">
+          <img src="images/bbq-kitchen-project.jpg" alt="Barbecue & Outdoor Kitchen Project">
           <div class="gallery-overlay">
-            <span class="gallery-category">East Valley Remodel</span>
-            <h3 class="gallery-title">Night Fire Lounge & LED Accent Lights</h3>
-            <p class="gallery-desc">Custom masonry fire pit with integrated low-voltage LED landscape lighting.</p>
+            <span class="gallery-category">Chandler Outdoor Oasis</span>
+            <h3 class="gallery-title">Stacked Stone BBQ Island & Pergola</h3>
+            <p class="gallery-desc">Built-in stainless steel grill, bar seating, and outdoor dining pergola at sunset.
+            </p>
           </div>
         </div>
       </div>
@@ -356,11 +412,27 @@
     <div class="container">
       <div class="why-wrapper">
         <div class="why-content">
-          <span class="section-tag"><i class="fas fa-user-check"></i> Owner-Operated Precision</span>
+          <span class="section-tag"><i class="fas fa-user-check"></i> Why Choose Us</span>
           <h2>Founded by Mateo. Built on Uncompromising Quality.</h2>
           <p>For over 5 years, Mateo Landscaping LLC has delivered top-tier hardscape solutions for homeowners who value
             craftsmanship, speed, and total reliability. We don't cut corners — every paver laid and pipe installed is
             done right.</p>
+
+          <!-- Why Choose Us Trust Metrics -->
+          <div class="why-trust-metrics">
+            <div class="trust-metric-card">
+              <div class="trust-metric-num">5+ Years</div>
+              <div class="trust-metric-lbl">In Business</div>
+            </div>
+            <div class="trust-metric-card">
+              <div class="trust-metric-num">150+</div>
+              <div class="trust-metric-lbl">5-Star Reviews</div>
+            </div>
+            <div class="trust-metric-card">
+              <div class="trust-metric-num">0% Down</div>
+              <div class="trust-metric-lbl">Flexible Financing</div>
+            </div>
+          </div>
 
           <div class="feature-list">
             <div class="feature-item">
@@ -373,25 +445,28 @@
             </div>
 
             <div class="feature-item">
-              <div class="feature-icon"><i class="fas fa-check"></i></div>
+              <div class="feature-icon"><i class="fas fa-percent"></i></div>
               <div class="feature-text">
-                <h4>30-Mile Service Coverage in Arizona</h4>
-                <p>Serving premier residential communities throughout Scottsdale, Paradise Valley, Gilbert, Chandler,
-                  Mesa, and surrounding high-end areas.</p>
+                <h4>Flexible 0% Down Financing Options</h4>
+                <p>Transform your yard now and pay over time with easy monthly financing options tailored for Arizona
+                  homeowners.</p>
               </div>
             </div>
 
             <div class="feature-item">
-              <div class="feature-icon"><i class="fas fa-check"></i></div>
+              <div class="feature-icon"><i class="fas fa-shield-check"></i></div>
               <div class="feature-text">
-                <h4>24/7 Service Availability</h4>
-                <p>We are responsive round-the-clock for inquiries, quotes, and rapid project scheduling to fit your
-                  timetable.</p>
+                <h4>Licensed, Bonded & Insured (ROC #345892)</h4>
+                <p>Fully compliant with Arizona Registrar of Contractors standards with complete liability and workers'
+                  comp coverage.</p>
               </div>
             </div>
           </div>
 
-          <a href="#lead-form" class="btn-primary">Request Free Consultation <i class="fas fa-arrow-right"></i></a>
+          <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+            <a href="#lead-form" class="btn-primary">Request Free Consultation <i class="fas fa-arrow-right"></i></a>
+            <a href="financing.html" class="btn-secondary"><i class="fas fa-calculator"></i> Financing Calculator</a>
+          </div>
         </div>
 
         <div class="why-image-card">
@@ -441,13 +516,13 @@
           communities with rapid on-site consultations and master hardscaping execution.</p>
 
         <div class="city-pills">
-          <span class="city-pill"><i class="fas fa-location-dot"></i> Scottsdale</span>
-          <span class="city-pill"><i class="fas fa-location-dot"></i> Paradise Valley</span>
-          <span class="city-pill"><i class="fas fa-location-dot"></i> Gilbert</span>
-          <span class="city-pill"><i class="fas fa-location-dot"></i> Chandler</span>
-          <span class="city-pill"><i class="fas fa-location-dot"></i> Fountain Hills</span>
-          <span class="city-pill"><i class="fas fa-location-dot"></i> Arcadia</span>
-          <span class="city-pill"><i class="fas fa-location-dot"></i> Mesa</span>
+          <a href="scottsdale.html" class="city-pill"><i class="fas fa-location-dot"></i> Scottsdale</a>
+          <a href="paradise-valley.html" class="city-pill"><i class="fas fa-location-dot"></i> Paradise Valley</a>
+          <a href="gilbert.html" class="city-pill"><i class="fas fa-location-dot"></i> Gilbert</a>
+          <a href="chandler.html" class="city-pill"><i class="fas fa-location-dot"></i> Chandler</a>
+          <a href="scottsdale.html" class="city-pill"><i class="fas fa-location-dot"></i> Fountain Hills</a>
+          <a href="scottsdale.html" class="city-pill"><i class="fas fa-location-dot"></i> Arcadia</a>
+          <a href="chandler.html" class="city-pill"><i class="fas fa-location-dot"></i> Mesa</a>
         </div>
 
         <div class="map-stats-bar">
@@ -588,62 +663,77 @@
           <div class="step-node active" data-step-node="1">1</div>
           <div class="step-node" data-step-node="2">2</div>
           <div class="step-node" data-step-node="3">3</div>
-          <div class="step-node" data-step-node="4">4</div>
         </div>
 
         <form id="outdoorLeadForm">
-          <!-- STEP 1: Vision & Space -->
+          <!-- STEP 1: Project & Vision -->
           <div class="form-step-panel active" data-step="1">
             <div class="form-group">
               <label class="form-label" for="vision">
-                1. What outdoor space are you ready to transform? <span class="req">*</span>
+                1. What outdoor project are you looking to build? <span class="req">*</span>
               </label>
               <textarea id="vision" name="vision" class="form-textarea"
-                placeholder="Describe your vision to us (e.g. travertine patio around pool, turf area for kids, BBQ grill island, low-voltage lighting...)"
+                placeholder="Describe your vision (e.g. travertine pool patio, artificial turf lawn, built-in BBQ island, modern gas fire pit, desert lighting...)"
                 required></textarea>
             </div>
 
             <div class="form-group">
               <label class="form-label">
-                2. Do you currently have an outdoor space we'd be working with? <span class="req">*</span>
+                2. Select services needed: <span class="req">*</span>
               </label>
               <div class="options-grid">
                 <label class="option-card">
-                  <input type="radio" name="space_type" value="Empty yard — starting from scratch" required>
+                  <input type="checkbox" name="services" value="Pavers & Travertine Patio">
                   <div class="option-content">
                     <div class="option-check"></div>
-                    <span>Empty yard — starting from scratch</span>
+                    <span>Pavers & Travertine</span>
                   </div>
                 </label>
 
                 <label class="option-card">
-                  <input type="radio" name="space_type" value="Existing space that needs a full remodel">
+                  <input type="checkbox" name="services" value="Artificial Synthetic Turf">
                   <div class="option-content">
                     <div class="option-check"></div>
-                    <span>Existing space that needs a full remodel</span>
+                    <span>Synthetic Turf</span>
                   </div>
                 </label>
 
                 <label class="option-card">
-                  <input type="radio" name="space_type" value="Partial renovation — adding to what's there">
+                  <input type="checkbox" name="services" value="BBQ & Outdoor Kitchen">
                   <div class="option-content">
                     <div class="option-check"></div>
-                    <span>Partial renovation — adding to what's there</span>
+                    <span>BBQ & Outdoor Kitchen</span>
+                  </div>
+                </label>
+
+                <label class="option-card">
+                  <input type="checkbox" name="services" value="Fire Pit & Hardscape Walls">
+                  <div class="option-content">
+                    <div class="option-check"></div>
+                    <span>Fire Pit & Block Walls</span>
                   </div>
                 </label>
               </div>
             </div>
           </div>
 
-          <!-- STEP 2: Budget & Timeline -->
+          <!-- STEP 2: Location, Budget & Financing -->
           <div class="form-step-panel" data-step="2">
             <div class="form-group">
+              <label class="form-label" for="city">
+                3. Where is your property located? <span class="req">*</span>
+              </label>
+              <input type="text" id="city" name="city" class="form-input"
+                placeholder="e.g. Scottsdale, Paradise Valley, Gilbert, Chandler, Fountain Hills..." required>
+            </div>
+
+            <div class="form-group">
               <label class="form-label">
-                3. What's your estimated budget? <span class="req">*</span>
+                4. Estimated budget & payment preference? <span class="req">*</span>
               </label>
               <div class="options-grid">
                 <label class="option-card">
-                  <input type="radio" name="budget" value="$15,000 – $30,000" required>
+                  <input type="radio" name="budget" value="$15k–$30k (Paying Cash/Check)" required>
                   <div class="option-content">
                     <div class="option-check"></div>
                     <span>$15,000 – $30,000</span>
@@ -651,127 +741,40 @@
                 </label>
 
                 <label class="option-card">
-                  <input type="radio" name="budget" value="$30,000 – $60,000">
+                  <input type="radio" name="budget" value="$30k–$60k (Interested in 0% Down Financing)">
                   <div class="option-content">
                     <div class="option-check"></div>
-                    <span>$30,000 – $60,000</span>
+                    <span>$30,000 – $60,000 (Financing)</span>
                   </div>
                 </label>
 
                 <label class="option-card">
-                  <input type="radio" name="budget" value="$60,000 – $100,000">
+                  <input type="radio" name="budget" value="$60k–$100k+">
                   <div class="option-content">
                     <div class="option-check"></div>
-                    <span>$60,000 – $100,000</span>
-                  </div>
-                </label>
-
-                <label class="option-card">
-                  <input type="radio" name="budget" value="$100,000+">
-                  <div class="option-content">
-                    <div class="option-check"></div>
-                    <span>$100,000+</span>
-                  </div>
-                </label>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">
-                4. How soon are you looking to start? <span class="req">*</span>
-              </label>
-              <div class="options-grid">
-                <label class="option-card">
-                  <input type="radio" name="timeline" value="Within 30 days" required>
-                  <div class="option-content">
-                    <div class="option-check"></div>
-                    <span>Within 30 days</span>
-                  </div>
-                </label>
-
-                <label class="option-card">
-                  <input type="radio" name="timeline" value="Within 90 days">
-                  <div class="option-content">
-                    <div class="option-check"></div>
-                    <span>Within 90 days</span>
-                  </div>
-                </label>
-
-                <label class="option-card">
-                  <input type="radio" name="timeline" value="Within 6 months">
-                  <div class="option-content">
-                    <div class="option-check"></div>
-                    <span>Within 6 months</span>
-                  </div>
-                </label>
-
-                <label class="option-card">
-                  <input type="radio" name="timeline" value="Just exploring">
-                  <div class="option-content">
-                    <div class="option-check"></div>
-                    <span>Just exploring</span>
+                    <span>$60,000 – $100,000+</span>
                   </div>
                 </label>
               </div>
             </div>
           </div>
 
-          <!-- STEP 3: Design Readiness & Location -->
+          <!-- STEP 3: Contact Info & Request Quote -->
           <div class="form-step-panel" data-step="3">
             <div class="form-group">
               <label class="form-label">
-                5. Do you have a design in mind or need help with the vision? <span class="req">*</span>
-              </label>
-              <div class="options-grid">
-                <label class="option-card">
-                  <input type="radio" name="design_readiness" value="I have a clear idea of what I want" required>
-                  <div class="option-content">
-                    <div class="option-check"></div>
-                    <span>I have a clear idea of what I want</span>
-                  </div>
-                </label>
-
-                <label class="option-card">
-                  <input type="radio" name="design_readiness" value="I have some ideas but need guidance">
-                  <div class="option-content">
-                    <div class="option-check"></div>
-                    <span>I have some ideas but need guidance</span>
-                  </div>
-                </label>
-
-                <label class="option-card">
-                  <input type="radio" name="design_readiness" value="I need help designing from scratch">
-                  <div class="option-content">
-                    <div class="option-check"></div>
-                    <span>I need help designing from scratch</span>
-                  </div>
-                </label>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="city">
-                6. Where is the property located? <span class="req">*</span>
-              </label>
-              <input type="text" id="city" name="city" class="form-input"
-                placeholder="e.g. Scottsdale, Paradise Valley, Gilbert, Chandler..." required>
-            </div>
-          </div>
-
-          <!-- STEP 4: Contact Info -->
-          <div class="form-step-panel" data-step="4">
-            <div class="form-group">
-              <label class="form-label">
-                7. How can we reach you? <span class="req">*</span>
+                5. Where should we send your free consultation quote? <span class="req">*</span>
               </label>
               <div class="form-grid-2" style="margin-bottom: 16px;">
                 <div>
-                  <label style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 4px;">Name
+                  <label style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 4px;">Full
+                    Name
                     <span class="req">*</span></label>
                   <input type="text" name="name" class="form-input" placeholder="Full Name" required>
                 </div>
                 <div>
                   <label style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 4px;">Phone
+                    Number
                     <span class="req">*</span></label>
                   <input type="tel" name="phone" class="form-input" placeholder="(480) 000-0000" required>
                 </div>
@@ -779,15 +782,15 @@
 
               <div class="form-grid-2">
                 <div>
-                  <label style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 4px;">Best
-                    time to call</label>
-                  <input type="text" name="best_time" class="form-input"
-                    placeholder="e.g. Mornings, After 5 PM, Weekends">
-                </div>
-                <div>
                   <label style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 4px;">Email
+                    Address
                     <span class="req">*</span></label>
                   <input type="email" name="email" class="form-input" placeholder="name@example.com" required>
+                </div>
+                <div>
+                  <label style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 4px;">Best
+                    Time To Call</label>
+                  <input type="text" name="best_time" class="form-input" placeholder="e.g. Mornings, After 5 PM">
                 </div>
               </div>
             </div>
@@ -812,90 +815,52 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="#hero" class="brand-logo">
-            <img src="images/logo.png" alt="Mateo Landscaping Logo">
-            <div class="brand-text">
-              <span class="brand-name">MATEO LANDSCAPING</span>
-              <span class="brand-tagline">Done Right.</span>
-            </div>
-          </a>
-          <p>Specialists in luxury hardscaping, pavers, synthetic turf, coping tiles, outdoor barbecue kitchens, and
-            desert lighting across Arizona.</p>
-          <div class="social-links">
-            <a href="https://www.instagram.com/mateos_landscaping_llc/" target="_blank" rel="noopener"
-              class="social-btn" aria-label="Instagram">
-              <i class="fab fa-instagram"></i>
-            </a>
-          </div>
+  <!-- EDITORIAL LUXURY FOOTER (MATCHING USER REFERENCE DESIGN) -->
+  <footer class="footer-editorial">
+    <div class="container-editorial">
+      <!-- Top Row: Get in Touch & Giant Serif Links Stack -->
+      <div class="footer-top-row">
+        <!-- Left: Get In Touch -->
+        <div class="footer-touch-col">
+          <span class="footer-label">GET IN TOUCH</span>
+          <a href="mailto:info@mateoslandscaping.com" class="footer-email-link">info@mateoslandscaping.com</a>
+          <a href="tel:4803886560" class="footer-phone-link">+1 (480) 388-6560</a>
+
+          <button id="backToTopBtn" class="back-to-top-btn" aria-label="Back to Top">
+            <span class="btn-arrow-circle"><i class="fas fa-arrow-up"></i></span>
+            <span class="btn-text-lbl">BACK TO TOP</span>
+          </button>
         </div>
 
-        <div class="footer-col">
-          <h4>Navigation</h4>
-          <ul class="footer-links">
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#work">Our Work</a></li>
-            <li><a href="#materials">3D Materials</a></li>
-            <li><a href="#why-us">Why Mateo</a></li>
-            <li><a href="#faq">FAQ</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Services</h4>
-          <ul class="footer-links">
-            <li><a href="#services">Travertine Pavers</a></li>
-            <li><a href="#services">Artificial Turf</a></li>
-            <li><a href="#services">Pool Coping Tile</a></li>
-            <li><a href="#services">Outdoor BBQs</a></li>
-            <li><a href="#services">Desert Lighting</a></li>
-            <li><a href="#services">Irrigation Systems</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Contact & Hours</h4>
-          <ul class="contact-info-list">
-            <li class="contact-info-item">
-              <i class="fas fa-phone-alt"></i>
-              <div>
-                <strong>Phone:</strong><br>
-                <a href="tel:4803886560" style="color: var(--gold-primary); text-decoration: none;">(480) 388-6560</a>
-              </div>
-            </li>
-            <li class="contact-info-item">
-              <i class="fas fa-envelope"></i>
-              <div>
-                <strong>Email:</strong><br>
-                info@mateoslandscaping.com
-              </div>
-            </li>
-            <li class="contact-info-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <div>
-                <strong>Location:</strong><br>
-                Arizona (30-Mile Radius)
-              </div>
-            </li>
-            <li class="contact-info-item">
-              <i class="fas fa-clock"></i>
-              <div>
-                <strong>Hours:</strong><br>
-                24/7 Availability
-              </div>
-            </li>
-          </ul>
+        <!-- Right: Giant Serif Editorial Links Stack -->
+        <div class="footer-serif-links">
+          <a href="#services">Services</a>
+          <a href="privacy.html">Policy</a>
+          <a href="#services">Our Services</a>
+          <a href="#map">Locations</a>
+          <a href="reviews.html">Stories</a>
         </div>
       </div>
 
-      <div class="footer-bottom">
-        <p>&copy; 2026 Mateo Landscaping LLC. All Rights Reserved. Tagline: Done Right.</p>
-        <p>Serving Scottsdale, Paradise Valley, Gilbert, Chandler, & High-End Arizona Communities.</p>
+      <!-- Center: Monumental Giant Typography -->
+      <div class="footer-monumental-wrap">
+        <h1 class="footer-monumental-text">
+          <span>MATEO.</span>
+          <span>LANDSCAPING</span>
+        </h1>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-editorial-bottom">
+        <div class="footer-social-links">
+          <a href="https://www.instagram.com/mateos_landscaping_llc/" target="_blank" rel="noopener">INSTAGRAM</a>
+          <span class="footer-roc-tag">ROC #345892 (LICENSED & INSURED)</span>
+        </div>
+
+        <div class="footer-copy-info">
+          <p>&copy; 2026 MATEO LANDSCAPING LLC. ARIZONA.</p>
+          <p>PROVIDING THE BEST SERVICE WITH OVER 5 YEARS OF EXPERIENCE. 🌵 ☀️ ARIZONA.</p>
+        </div>
       </div>
     </div>
   </footer>
