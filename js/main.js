@@ -526,6 +526,141 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ===================================================================
+  // ANIMATION 1: SCROLL-TRIGGERED SECTION REVEAL CASCADE
+  // Watches all .reveal, .reveal-left, .reveal-scale elements and adds
+  // .is-visible when they enter the viewport (once).
+  // ===================================================================
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target); // fire once
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+  );
+
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-scale').forEach(el => {
+    revealObserver.observe(el);
+  });
+
+  // ===================================================================
+  // ANIMATION 2: ANIMATED COUNTER NUMBERS
+  // Finds elements with data-count and data-suffix, counts up on reveal.
+  // ===================================================================
+  function animateCounter(el) {
+    const target = parseInt(el.getAttribute('data-count'), 10);
+    const suffix = el.getAttribute('data-suffix') || '';
+    const duration = 1400; // ms
+    const startTime = performance.now();
+
+    function step(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(eased * target);
+      el.textContent = current + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  const counterObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          animateCounter(el);
+          counterObserver.unobserve(el);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  document.querySelectorAll('[data-count]').forEach(el => {
+    counterObserver.observe(el);
+  });
+
+  // ===================================================================
+  // ANIMATION 3: PARALLAX HERO BACKGROUND
+  // Shifts hero background-position-y at 40% scroll speed for depth.
+  // Uses passive listener so it never blocks scrolling.
+  // ===================================================================
+  const heroSection = document.querySelector('.hero');
+  if (heroSection) {
+    let heroHeight = heroSection.offsetHeight;
+
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      if (scrollY <= heroHeight + 200) {
+        heroSection.style.backgroundPositionY = `calc(50% + ${scrollY * 0.4}px)`;
+      }
+    }, { passive: true });
+
+    // Recalculate on resize
+    window.addEventListener('resize', () => {
+      heroHeight = heroSection.offsetHeight;
+    }, { passive: true });
+  }
+
+  // ===================================================================
+  // ANIMATION 4: SERVICES SECTION STAGGERED ENTRANCE
+  // When the services section enters view, stagger the filter tabs and
+  // matrix sidebar items in one by one with 80ms delay per item.
+  // ===================================================================
+  const servicesSection = document.getElementById('services');
+  if (servicesSection) {
+    const filterBtns = servicesSection.querySelectorAll('.filter-btn');
+    const matrixItems = servicesSection.querySelectorAll('.matrix-item');
+
+    // Set initial hidden state (JS-managed so it only applies when observer fires)
+    filterBtns.forEach(btn => {
+      btn.style.opacity = '0';
+      btn.style.transform = 'translateY(-18px)';
+      btn.style.transition = 'opacity 0.5s cubic-bezier(0.16,1,0.3,1), transform 0.5s cubic-bezier(0.16,1,0.3,1)';
+    });
+    matrixItems.forEach(item => {
+      item.style.opacity = '0';
+      item.style.transform = 'translateX(-28px)';
+      item.style.transition = 'opacity 0.55s cubic-bezier(0.16,1,0.3,1), transform 0.55s cubic-bezier(0.16,1,0.3,1)';
+    });
+
+    let servicesAnimated = false;
+    const servicesObserver = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !servicesAnimated) {
+          servicesAnimated = true;
+          servicesObserver.disconnect();
+
+          // Stagger filter tabs: 0ms, 80ms, 160ms, 240ms
+          filterBtns.forEach((btn, i) => {
+            setTimeout(() => {
+              btn.style.opacity = '1';
+              btn.style.transform = 'translateY(0)';
+            }, i * 80);
+          });
+
+          // Stagger matrix items: start after last tab + small pause
+          const baseDelay = filterBtns.length * 80 + 100;
+          matrixItems.forEach((item, i) => {
+            setTimeout(() => {
+              item.style.opacity = '1';
+              item.style.transform = 'translateX(0)';
+            }, baseDelay + i * 80);
+          });
+        }
+      },
+      { threshold: 0.08 }
+    );
+
+    servicesObserver.observe(servicesSection);
+  }
+
+  // ===================================================================
   // 10. INTERACTIVE ARIZONA NEIGHBORHOOD MAP
   // ===================================================================
   const neighborhoodData = {
