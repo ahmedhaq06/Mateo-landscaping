@@ -704,10 +704,9 @@ document.addEventListener('DOMContentLoaded', () => {
     currentSlide = 0;
     updateCarouselCounter();
 
-    // Show modal
+    // Show modal — CSS transitions handle the animation via .is-open class
     if (modalOverlay) {
-      modalOverlay.style.display = 'flex';
-      modalOverlay.classList.remove('closing');
+      modalOverlay.classList.add('is-open');
       document.body.style.overflow = 'hidden';
     }
 
@@ -720,10 +719,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function closeProjectModal() {
     if (!modalOverlay) return;
-    modalOverlay.classList.add('closing');
+    modalOverlay.classList.remove('is-open');
     setTimeout(() => {
-      modalOverlay.style.display = 'none';
-      modalOverlay.classList.remove('closing');
       document.body.style.overflow = '';
     }, 320);
   }
@@ -753,7 +750,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ESC key closes modal
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modalOverlay.style.display !== 'none') {
+      if (e.key === 'Escape' && modalOverlay.classList.contains('is-open')) {
         closeProjectModal();
       }
     });

@@ -1726,21 +1726,14 @@ h6 {
   align-items: flex-end;
   justify-content: center;
   padding: 0;
-  animation: modalFadeIn 0.35s ease forwards;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-@keyframes modalFadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.project-modal-overlay.closing {
-  animation: modalFadeOut 0.3s ease forwards;
-}
-
-@keyframes modalFadeOut {
-  from { opacity: 1; }
-  to { opacity: 0; }
+.project-modal-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
 }
 
 .project-modal-drawer {
@@ -1751,22 +1744,13 @@ h6 {
   border: 1px solid var(--border-subtle);
   border-bottom: none;
   overflow-y: auto;
-  animation: drawerSlideUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.6);
+  transform: translateY(100%);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@keyframes drawerSlideUp {
-  from { transform: translateY(100%); }
-  to { transform: translateY(0); }
-}
-
-.project-modal-overlay.closing .project-modal-drawer {
-  animation: drawerSlideDown 0.3s ease forwards;
-}
-
-@keyframes drawerSlideDown {
-  from { transform: translateY(0); }
-  to { transform: translateY(100%); }
+.project-modal-overlay.is-open .project-modal-drawer {
+  transform: translateY(0);
 }
 
 /* Modal top bar */
