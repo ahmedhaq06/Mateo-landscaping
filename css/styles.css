@@ -1776,7 +1776,7 @@ h6 {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   z-index: 9000;
-  display: flex;
+  display: none;
   align-items: flex-end;
   justify-content: center;
   padding: 0;
@@ -1786,6 +1786,7 @@ h6 {
 }
 
 .project-modal-overlay.is-open {
+  display: flex;
   opacity: 1;
   visibility: visible;
 }
@@ -3488,7 +3489,7 @@ h6 {
 .footer-editorial {
   background: #080A0C;
   color: #FFFFFF;
-  padding: 100px 0 40px 0;
+  padding: 80px 0 24px 0;
   border-top: 1px solid var(--border-subtle);
   position: relative;
 }
@@ -3685,6 +3686,10 @@ h6 {
   display: flex;
   flex-direction: column;
   gap: 4px;
+}
+
+.footer-copy-info p {
+  margin: 0;
 }
 
 @media (max-width: 992px) {

@@ -841,7 +841,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Show modal — CSS transitions handle the animation via .is-open class
     if (modalOverlay) {
-      modalOverlay.classList.add('is-open');
+      modalOverlay.style.display = 'flex';
+      requestAnimationFrame(() => {
+        modalOverlay.classList.add('is-open');
+      });
       document.body.style.overflow = 'hidden';
     }
 
@@ -856,6 +859,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!modalOverlay) return;
     modalOverlay.classList.remove('is-open');
     setTimeout(() => {
+      modalOverlay.style.display = 'none';
       document.body.style.overflow = '';
     }, 320);
   }
