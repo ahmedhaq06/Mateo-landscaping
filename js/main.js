@@ -524,4 +524,239 @@ document.addEventListener('DOMContentLoaded', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
+
+  // ===================================================================
+  // 10. INTERACTIVE ARIZONA NEIGHBORHOOD MAP
+  // ===================================================================
+  const neighborhoodData = {
+    'scottsdale': {
+      city: 'Scottsdale',
+      projects: '45+',
+      title: 'Scottsdale Luxury Travertine Estates',
+      desc: "Arizona's premier luxury zip codes — Scottsdale is where we do our most iconic resort-style work: custom travertine pool decks, pavered driveways, and full outdoor kitchen islands that rival five-star resorts.",
+      timeline: '5–8 Days',
+      material: 'Ivory Travertine',
+      image: 'images/pavers-project.jpg',
+      link: 'scottsdale.html'
+    },
+    'paradise-valley': {
+      city: 'Paradise Valley',
+      projects: '30+',
+      title: 'Paradise Valley Resort Backyards',
+      desc: "The most exclusive zip code in Arizona. Our Paradise Valley clients demand perfection — and we deliver: seamless travertine coping, desert-native xeriscape borders, and full lighting systems for year-round evening entertaining.",
+      timeline: '4–6 Days',
+      material: 'Custom Travertine Coping',
+      image: 'images/gallery-1.jpg',
+      link: 'paradise-valley.html'
+    },
+    'fountain-hills': {
+      city: 'Fountain Hills',
+      projects: '20+',
+      title: 'Fountain Hills Desert Oasis Yards',
+      desc: "Perched above the Valley with stunning Sonoran Desert views, Fountain Hills homeowners choose us for synthetic turf lawns, flagstone patios, and desert-themed hardscaping that frames their million-dollar scenery.",
+      timeline: '3–5 Days',
+      material: 'Heat-Shield Synthetic Turf',
+      image: 'images/turf-project.jpg',
+      link: 'scottsdale.html'
+    },
+    'arcadia': {
+      city: 'Arcadia',
+      projects: '25+',
+      title: 'Arcadia Craftsman Patio & Lawn Installs',
+      desc: "Arcadia's iconic Craftsman homes deserve outdoor spaces to match. We install lush synthetic turf lawns, flagstone patio extensions, and low-voltage desert lighting that seamlessly blend modern luxury with neighborhood character.",
+      timeline: '4–5 Days',
+      material: 'Flagstone & Premium Turf',
+      image: 'images/gallery-2.jpg',
+      link: 'scottsdale.html'
+    },
+    'gilbert': {
+      city: 'Gilbert',
+      projects: '35+',
+      title: 'Gilbert Family Backyard Transformations',
+      desc: "Gilbert families trust us to transform their backyards into private resort escapes — synthetic putting greens, interlocking paver patios, built-in BBQ stations, and custom fire pit seating areas the whole family can enjoy year-round.",
+      timeline: '5–7 Days',
+      material: 'Interlocking Pavers',
+      image: 'images/gallery-3.jpg',
+      link: 'gilbert.html'
+    },
+    'chandler': {
+      city: 'Chandler',
+      projects: '28+',
+      title: 'Chandler Outdoor Kitchen & Entertainment',
+      desc: "Chandler's booming luxury neighborhoods demand outdoor kitchens worthy of a Food Network show. We build stacked stone BBQ islands, cedar pergolas, and travertine entertaining floors that hold up under Arizona's most punishing summers.",
+      timeline: '6–10 Days',
+      material: 'Stacked Natural Stone',
+      image: 'images/bbq-kitchen-project.jpg',
+      link: 'chandler.html'
+    }
+  };
+
+  const azPins = document.querySelectorAll('.az-map-pin');
+  const nbhdPanelDefault = document.getElementById('nbhdPanelDefault');
+  const nbhdPanelCard = document.getElementById('nbhdPanelCard');
+  const nbhdCardImage = document.getElementById('nbhdCardImage');
+  const nbhdCardCity = document.getElementById('nbhdCardCity');
+  const nbhdCardProjects = document.getElementById('nbhdCardProjects');
+  const nbhdCardTitle = document.getElementById('nbhdCardTitle');
+  const nbhdCardDesc = document.getElementById('nbhdCardDesc');
+  const nbhdCardTimeline = document.getElementById('nbhdCardTimeline');
+  const nbhdCardMaterial = document.getElementById('nbhdCardMaterial');
+  const nbhdCardCta = document.getElementById('nbhdCardCta');
+  const nbhdCtaCity = document.getElementById('nbhdCtaCity');
+
+  if (azPins.length && nbhdPanelDefault) {
+    function activateNeighborhoodPin(pin) {
+      // Update active state
+      azPins.forEach(p => p.classList.remove('active'));
+      pin.classList.add('active');
+
+      const cityKey = pin.getAttribute('data-city');
+      const data = neighborhoodData[cityKey];
+      if (!data) return;
+
+      // Populate panel card
+      if (nbhdCardImage) nbhdCardImage.src = data.image;
+      if (nbhdCardCity) nbhdCardCity.textContent = data.city;
+      if (nbhdCardProjects) nbhdCardProjects.textContent = data.projects;
+      if (nbhdCardTitle) nbhdCardTitle.textContent = data.title;
+      if (nbhdCardDesc) nbhdCardDesc.textContent = data.desc;
+      if (nbhdCardTimeline) nbhdCardTimeline.textContent = data.timeline;
+      if (nbhdCardMaterial) nbhdCardMaterial.textContent = data.material;
+      if (nbhdCtaCity) nbhdCtaCity.textContent = data.city;
+      if (nbhdCardCta) nbhdCardCta.href = '#lead-form';
+
+      // Swap panels with animation
+      if (nbhdPanelDefault) nbhdPanelDefault.style.display = 'none';
+      if (nbhdPanelCard) {
+        nbhdPanelCard.style.display = 'flex';
+        // Re-trigger animation
+        nbhdPanelCard.style.animation = 'none';
+        nbhdPanelCard.offsetHeight; // force reflow
+        nbhdPanelCard.style.animation = '';
+      }
+    }
+
+    azPins.forEach(pin => {
+      pin.addEventListener('click', () => activateNeighborhoodPin(pin));
+      pin.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          activateNeighborhoodPin(pin);
+        }
+      });
+    });
+  }
+
+  // ===================================================================
+  // 11. CINEMA-STYLE PROJECT SHOWCASE MODAL
+  // ===================================================================
+  const modalGalleryCards = document.querySelectorAll('.gallery-card[data-modal-title]');
+  const modalOverlay = document.getElementById('projectModalOverlay');
+  const modalCloseBtn = document.getElementById('modalCloseBtn');
+  const modalLocationLabel = document.getElementById('modalLocationLabel');
+  const modalCarouselTrack = document.getElementById('modalCarouselTrack');
+  const modalCarouselCounter = document.getElementById('modalCarouselCounter');
+  const modalProjectTitle = document.getElementById('modalProjectTitle');
+  const modalProjectDesc = document.getElementById('modalProjectDesc');
+  const modalTagsRow = document.getElementById('modalTagsRow');
+  const modalTimeline = document.getElementById('modalTimeline');
+  const modalSqft = document.getElementById('modalSqft');
+  const modalMaterials = document.getElementById('modalMaterials');
+  const modalCtaBtn = document.getElementById('modalCtaBtn');
+
+  let currentSlide = 0;
+  let totalSlides = 0;
+
+  function openProjectModal(card) {
+    const title = card.getAttribute('data-modal-title');
+    const location = card.getAttribute('data-modal-location');
+    const timeline = card.getAttribute('data-modal-timeline');
+    const materials = card.getAttribute('data-modal-materials');
+    const sqft = card.getAttribute('data-modal-sqft');
+    const tagsStr = card.getAttribute('data-modal-tags') || '';
+    const desc = card.getAttribute('data-modal-desc');
+    const imagesStr = card.getAttribute('data-modal-images') || '';
+    const images = imagesStr.split(',').map(s => s.trim()).filter(Boolean);
+
+    // Populate content
+    if (modalLocationLabel) modalLocationLabel.textContent = location;
+    if (modalProjectTitle) modalProjectTitle.textContent = title;
+    if (modalProjectDesc) modalProjectDesc.textContent = desc;
+    if (modalTimeline) modalTimeline.textContent = timeline;
+    if (modalSqft) modalSqft.textContent = sqft;
+    if (modalMaterials) modalMaterials.textContent = materials;
+
+    // Build tags
+    if (modalTagsRow) {
+      modalTagsRow.innerHTML = tagsStr.split(',').map(tag =>
+        `<span class="modal-tag">${tag.trim()}</span>`
+      ).join('');
+    }
+
+    // Build carousel
+    if (modalCarouselTrack) {
+      modalCarouselTrack.innerHTML = images.map(src =>
+        `<div class="modal-carousel-slide"><img src="${src}" alt="${title}" loading="lazy"></div>`
+      ).join('');
+    }
+
+    totalSlides = images.length;
+    currentSlide = 0;
+    updateCarouselCounter();
+
+    // Show modal
+    if (modalOverlay) {
+      modalOverlay.style.display = 'flex';
+      modalOverlay.classList.remove('closing');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Set CTA
+    if (modalCtaBtn) {
+      modalCtaBtn.href = `#lead-form`;
+      modalCtaBtn.addEventListener('click', () => closeProjectModal(), { once: true });
+    }
+  }
+
+  function closeProjectModal() {
+    if (!modalOverlay) return;
+    modalOverlay.classList.add('closing');
+    setTimeout(() => {
+      modalOverlay.style.display = 'none';
+      modalOverlay.classList.remove('closing');
+      document.body.style.overflow = '';
+    }, 320);
+  }
+
+  function updateCarouselCounter() {
+    if (modalCarouselCounter && totalSlides > 0) {
+      modalCarouselCounter.textContent = `${currentSlide + 1} / ${totalSlides}`;
+    }
+    if (modalCarouselTrack) {
+      modalCarouselTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+  }
+
+  if (modalGalleryCards.length && modalOverlay) {
+    modalGalleryCards.forEach(card => {
+      card.addEventListener('click', () => openProjectModal(card));
+    });
+
+    if (modalCloseBtn) {
+      modalCloseBtn.addEventListener('click', closeProjectModal);
+    }
+
+    // Close on overlay click (outside drawer)
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) closeProjectModal();
+    });
+
+    // ESC key closes modal
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modalOverlay.style.display !== 'none') {
+        closeProjectModal();
+      }
+    });
+  }
+
 });

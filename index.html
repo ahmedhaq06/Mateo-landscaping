@@ -387,36 +387,61 @@
       <div style="text-align: center;">
         <span class="section-tag"><i class="fas fa-camera"></i> Featured Work</span>
         <h2 class="section-title">Our Recent Transformations</h2>
+        <p class="section-subtitle">Click any project to explore the full transformation — specs, materials, and more.</p>
       </div>
 
       <div class="gallery-grid">
-        <div class="gallery-card">
+        <div class="gallery-card" id="galleryCard1"
+          data-modal-title="Interlocking Pavers & Travertine Patio"
+          data-modal-location="Scottsdale Luxury Estate"
+          data-modal-timeline="6 Days"
+          data-modal-materials="Ivory Travertine, Interlocking Concrete Pavers"
+          data-modal-sqft="2,400 sq ft"
+          data-modal-tags="Pavers,Travertine,Patio Design,Driveway"
+          data-modal-desc="Custom herringbone paver driveway and travertine pool patio engineered to stay barefoot-comfortable under Arizona's 115°F summer heat. Precision cut coping borders and desert-native accent plants complete the resort aesthetic."
+          data-modal-images="images/pavers-project.jpg">
           <img src="images/pavers-project.jpg" alt="Pavers & Travertine Driveway Project">
           <div class="gallery-overlay">
             <span class="gallery-category">Scottsdale Luxury Estate</span>
             <h3 class="gallery-title">Interlocking Pavers & Travertine Patio</h3>
-            <p class="gallery-desc">Custom herringbone paver driveway and patio engineered for 115°F Arizona summer
-              heat.</p>
+            <p class="gallery-desc">Custom herringbone paver driveway and patio engineered for 115°F Arizona summer heat.</p>
+            <div class="gallery-view-btn"><i class="fas fa-expand"></i> View Full Project</div>
           </div>
         </div>
 
-        <div class="gallery-card">
+        <div class="gallery-card" id="galleryCard2"
+          data-modal-title="Synthetic Turf & Backyard Putting Green"
+          data-modal-location="Paradise Valley Residence"
+          data-modal-timeline="4 Days"
+          data-modal-materials="80oz Heat-Shield Synthetic Turf, Cool Infill, Travertine Borders"
+          data-modal-sqft="1,800 sq ft"
+          data-modal-tags="Synthetic Turf,Putting Green,Backyard,Artificial Grass"
+          data-modal-desc="Ultra-realistic heat-shield synthetic turf that stays pet and child safe even at peak summer temperatures. Precision-cut travertine borders frame the turf area with a clean, resort-quality finish and custom putting green section."
+          data-modal-images="images/turf-project.jpg">
           <img src="images/turf-project.jpg" alt="Artificial Turf Lawn Project">
           <div class="gallery-overlay">
             <span class="gallery-category">Paradise Valley Residence</span>
             <h3 class="gallery-title">Synthetic Turf & Backyard Putting Green</h3>
-            <p class="gallery-desc">Ultra-realistic heat-shield synthetic turf paired with precision travertine borders.
-            </p>
+            <p class="gallery-desc">Ultra-realistic heat-shield synthetic turf paired with precision travertine borders.</p>
+            <div class="gallery-view-btn"><i class="fas fa-expand"></i> View Full Project</div>
           </div>
         </div>
 
-        <div class="gallery-card">
+        <div class="gallery-card" id="galleryCard3"
+          data-modal-title="Stacked Stone BBQ Island & Pergola"
+          data-modal-location="Chandler Outdoor Oasis"
+          data-modal-timeline="8 Days"
+          data-modal-materials="Stacked Natural Stone, Stainless Steel Grill, Cedar Pergola"
+          data-modal-sqft="3,200 sq ft"
+          data-modal-tags="BBQ Island,Outdoor Kitchen,Pergola,Entertainment"
+          data-modal-desc="Built-in stainless steel grill station, granite bar seating, and a handcrafted cedar shade pergola overlooking a fully landscaped desert backyard. Designed for Arizona's year-round outdoor entertaining lifestyle."
+          data-modal-images="images/bbq-kitchen-project.jpg">
           <img src="images/bbq-kitchen-project.jpg" alt="Barbecue & Outdoor Kitchen Project">
           <div class="gallery-overlay">
             <span class="gallery-category">Chandler Outdoor Oasis</span>
             <h3 class="gallery-title">Stacked Stone BBQ Island & Pergola</h3>
-            <p class="gallery-desc">Built-in stainless steel grill, bar seating, and outdoor dining pergola at sunset.
-            </p>
+            <p class="gallery-desc">Built-in stainless steel grill, bar seating, and outdoor dining pergola at sunset.</p>
+            <div class="gallery-view-btn"><i class="fas fa-expand"></i> View Full Project</div>
           </div>
         </div>
       </div>
@@ -553,67 +578,224 @@
   </section>
 
   <!-- SERVICE AREA MAP SECTION - FULL VIEWPORT WIDTH -->
-  <section id="service-area" class="map-section">
+  <!-- INTERACTIVE ARIZONA NEIGHBORHOOD EXPLORER MAP -->
+  <section id="service-area" class="neighborhood-map-section">
     <div class="container">
-      <div style="text-align: center;">
+      <div class="nbhd-header">
         <span class="section-tag"><i class="fas fa-location-dot"></i> Regional Coverage</span>
-        <h2 class="section-title">Serving Arizona's Premier Communities</h2>
-        <p class="section-subtitle">We provide full hardscaping & outdoor living services within a 30-mile radius across
-          Arizona.</p>
+        <h2 class="section-title">Explore Our Project Neighborhoods</h2>
+        <p class="section-subtitle">Click a pin to see real transformations we've built right in your community.</p>
       </div>
     </div>
 
-    <!-- Full-Width Edge-to-Edge Map Frame -->
-    <div class="map-fullwidth-box">
-      <!-- Top Blend Vignette -->
-      <div class="map-top-fade"></div>
+    <div class="nbhd-map-wrapper">
+      <!-- LEFT: SVG Arizona Map -->
+      <div class="nbhd-svg-panel">
+        <div class="nbhd-svg-container">
+          <!-- Arizona state SVG silhouette -->
+          <svg id="azMapSvg" viewBox="0 0 500 560" xmlns="http://www.w3.org/2000/svg" class="az-svg">
+            <!-- Arizona state outline path -->
+            <path class="az-state-fill" d="M 60,10 L 460,10 L 460,360 L 380,360 L 380,420 L 120,420 L 60,260 Z"/>
+            <path class="az-state-outline" d="M 60,10 L 460,10 L 460,360 L 380,360 L 380,420 L 120,420 L 60,260 Z"/>
 
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d212879.378772397!2d-111.96879854483756!3d33.56839352228733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b08d9a7772c97%3A0x26d2e412188fe618!2sScottsdale%2C%20AZ!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
-        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-        title="Mateo Landscaping Arizona Service Area Map">
-      </iframe>
+            <!-- Grid lines decorative -->
+            <line x1="0" y1="140" x2="500" y2="140" class="az-grid-line"/>
+            <line x1="0" y1="280" x2="500" y2="280" class="az-grid-line"/>
+            <line x1="166" y1="0" x2="166" y2="560" class="az-grid-line"/>
+            <line x1="333" y1="0" x2="333" y2="560" class="az-grid-line"/>
 
-      <!-- Deep Bottom Fade Gradient -->
-      <div class="map-bottom-fade"></div>
+            <!-- Scottsdale pin — East of Phoenix -->
+            <g class="az-map-pin" data-city="scottsdale" tabindex="0" role="button" aria-label="Scottsdale projects">
+              <circle class="pin-pulse-ring pin-pulse-1" cx="330" cy="210" r="22"/>
+              <circle class="pin-pulse-ring pin-pulse-2" cx="330" cy="210" r="16"/>
+              <circle class="pin-dot" cx="330" cy="210" r="9"/>
+              <text class="pin-label" x="330" y="196">Scottsdale</text>
+            </g>
 
-      <!-- Luxury Floating Center Card -->
-      <div class="map-floating-hero">
-        <div class="radar-ping-box">
-          <div class="radar-ring"></div>
-          <i class="fas fa-compass-drafting"></i>
-        </div>
-        <h3>30-Mile Service Radius</h3>
-        <p class="map-hero-sub">Exclusively serving high-end residential homeowners across Arizona's most coveted
-          communities with rapid on-site consultations and master hardscaping execution.</p>
+            <!-- Paradise Valley pin — Northwest of Scottsdale -->
+            <g class="az-map-pin" data-city="paradise-valley" tabindex="0" role="button" aria-label="Paradise Valley projects">
+              <circle class="pin-pulse-ring pin-pulse-1" cx="286" cy="193" r="20"/>
+              <circle class="pin-pulse-ring pin-pulse-2" cx="286" cy="193" r="14"/>
+              <circle class="pin-dot" cx="286" cy="193" r="8"/>
+              <text class="pin-label" x="286" y="180">Paradise Valley</text>
+            </g>
 
-        <div class="city-pills">
-          <a href="scottsdale.html" class="city-pill"><i class="fas fa-location-dot"></i> Scottsdale</a>
-          <a href="paradise-valley.html" class="city-pill"><i class="fas fa-location-dot"></i> Paradise Valley</a>
-          <a href="gilbert.html" class="city-pill"><i class="fas fa-location-dot"></i> Gilbert</a>
-          <a href="chandler.html" class="city-pill"><i class="fas fa-location-dot"></i> Chandler</a>
-          <a href="scottsdale.html" class="city-pill"><i class="fas fa-location-dot"></i> Fountain Hills</a>
-          <a href="scottsdale.html" class="city-pill"><i class="fas fa-location-dot"></i> Arcadia</a>
-          <a href="chandler.html" class="city-pill"><i class="fas fa-location-dot"></i> Mesa</a>
-        </div>
+            <!-- Fountain Hills pin — East side -->
+            <g class="az-map-pin" data-city="fountain-hills" tabindex="0" role="button" aria-label="Fountain Hills projects">
+              <circle class="pin-pulse-ring pin-pulse-1" cx="375" cy="183" r="20"/>
+              <circle class="pin-pulse-ring pin-pulse-2" cx="375" cy="183" r="14"/>
+              <circle class="pin-dot" cx="375" cy="183" r="8"/>
+              <text class="pin-label" x="375" y="170">Fountain Hills</text>
+            </g>
 
-        <div class="map-stats-bar">
-          <div class="map-stat-item">
-            <span class="map-stat-val">30 Mi.</span>
-            <span class="map-stat-lbl">Coverage Radius</span>
+            <!-- Arcadia pin — Central-east Phoenix -->
+            <g class="az-map-pin" data-city="arcadia" tabindex="0" role="button" aria-label="Arcadia projects">
+              <circle class="pin-pulse-ring pin-pulse-1" cx="262" cy="222" r="18"/>
+              <circle class="pin-pulse-ring pin-pulse-2" cx="262" cy="222" r="13"/>
+              <circle class="pin-dot" cx="262" cy="222" r="7"/>
+              <text class="pin-label" x="262" y="210">Arcadia</text>
+            </g>
+
+            <!-- Gilbert pin — Southeast -->
+            <g class="az-map-pin" data-city="gilbert" tabindex="0" role="button" aria-label="Gilbert projects">
+              <circle class="pin-pulse-ring pin-pulse-1" cx="335" cy="275" r="20"/>
+              <circle class="pin-pulse-ring pin-pulse-2" cx="335" cy="275" r="14"/>
+              <circle class="pin-dot" cx="335" cy="275" r="8"/>
+              <text class="pin-label" x="335" y="263">Gilbert</text>
+            </g>
+
+            <!-- Chandler pin — South of Gilbert -->
+            <g class="az-map-pin" data-city="chandler" tabindex="0" role="button" aria-label="Chandler projects">
+              <circle class="pin-pulse-ring pin-pulse-1" cx="298" cy="300" r="20"/>
+              <circle class="pin-pulse-ring pin-pulse-2" cx="298" cy="300" r="14"/>
+              <circle class="pin-dot" cx="298" cy="300" r="8"/>
+              <text class="pin-label" x="298" y="288">Chandler</text>
+            </g>
+          </svg>
+
+          <!-- Legend -->
+          <div class="az-map-legend">
+            <span class="legend-dot"></span>
+            <span>Active Service Area — Click a pin</span>
           </div>
-          <div class="map-stat-item">
-            <span class="map-stat-val">24 / 7</span>
-            <span class="map-stat-lbl">Rapid Response</span>
+        </div>
+
+        <!-- Stats Bar -->
+        <div class="nbhd-stats-bar">
+          <div class="nbhd-stat">
+            <span class="nbhd-stat-val">30 Mi.</span>
+            <span class="nbhd-stat-lbl">Coverage Radius</span>
           </div>
-          <div class="map-stat-item">
-            <span class="map-stat-val">FREE</span>
-            <span class="map-stat-lbl">On-Site Estimates</span>
+          <div class="nbhd-stat-divider"></div>
+          <div class="nbhd-stat">
+            <span class="nbhd-stat-val">150+</span>
+            <span class="nbhd-stat-lbl">Projects Completed</span>
+          </div>
+          <div class="nbhd-stat-divider"></div>
+          <div class="nbhd-stat">
+            <span class="nbhd-stat-val">FREE</span>
+            <span class="nbhd-stat-lbl">On-Site Estimates</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Neighborhood Project Showcase Panel -->
+      <div class="nbhd-panel" id="nbhdPanel">
+        <!-- Default state -->
+        <div class="nbhd-panel-default" id="nbhdPanelDefault">
+          <div class="nbhd-default-icon">
+            <i class="fas fa-map-location-dot"></i>
+          </div>
+          <h3>Select a Neighborhood</h3>
+          <p>Click any gold pin on the map to explore real project transformations we've built right in that community.</p>
+          <div class="nbhd-default-cities">
+            <span class="nbhd-city-chip active-pin-chip">Scottsdale</span>
+            <span class="nbhd-city-chip">Paradise Valley</span>
+            <span class="nbhd-city-chip">Fountain Hills</span>
+            <span class="nbhd-city-chip">Arcadia</span>
+            <span class="nbhd-city-chip">Gilbert</span>
+            <span class="nbhd-city-chip">Chandler</span>
+          </div>
+        </div>
+
+        <!-- Active project card (hidden by default) -->
+        <div class="nbhd-panel-card" id="nbhdPanelCard" style="display:none;">
+          <div class="nbhd-card-image-wrap">
+            <img id="nbhdCardImage" src="" alt="Project showcase">
+            <div class="nbhd-card-image-overlay"></div>
+            <div class="nbhd-card-badge-row">
+              <span class="nbhd-location-badge"><i class="fas fa-location-dot"></i> <span id="nbhdCardCity"></span></span>
+              <span class="nbhd-projects-badge"><span id="nbhdCardProjects"></span> Projects</span>
+            </div>
+          </div>
+          <div class="nbhd-card-body">
+            <h3 id="nbhdCardTitle" class="nbhd-card-title"></h3>
+            <p id="nbhdCardDesc" class="nbhd-card-desc"></p>
+            <div class="nbhd-card-specs">
+              <div class="nbhd-spec-item">
+                <i class="fas fa-clock"></i>
+                <div>
+                  <span class="nbhd-spec-label">Avg. Timeline</span>
+                  <span class="nbhd-spec-val" id="nbhdCardTimeline"></span>
+                </div>
+              </div>
+              <div class="nbhd-spec-item">
+                <i class="fas fa-layer-group"></i>
+                <div>
+                  <span class="nbhd-spec-label">Top Material</span>
+                  <span class="nbhd-spec-val" id="nbhdCardMaterial"></span>
+                </div>
+              </div>
+            </div>
+            <a href="#lead-form" class="nbhd-card-cta" id="nbhdCardCta">
+              Get a Free Quote for <span id="nbhdCtaCity"></span> <i class="fas fa-arrow-right"></i>
+            </a>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- ================================================================
+       CINEMA-STYLE PROJECT MODAL
+       ================================================================ -->
+  <div class="project-modal-overlay" id="projectModalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalProjectTitle" style="display:none;">
+    <div class="project-modal-drawer" id="projectModalDrawer">
+      <!-- Modal Header -->
+      <div class="modal-top-bar">
+        <div class="modal-top-bar-left">
+          <span class="modal-location-tag"><i class="fas fa-location-dot"></i> <span id="modalLocationLabel"></span></span>
+        </div>
+        <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close project modal">
+          <i class="fas fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Carousel -->
+      <div class="modal-carousel-area">
+        <div class="modal-carousel-track" id="modalCarouselTrack">
+          <!-- Images injected by JS -->
+        </div>
+        <!-- Arrows hidden but structure ready for multi-image future -->
+        <div class="modal-carousel-counter" id="modalCarouselCounter"></div>
+      </div>
+
+      <!-- Content Row -->
+      <div class="modal-content-row">
+        <!-- Left: Title & Description -->
+        <div class="modal-content-left">
+          <h2 class="modal-project-title" id="modalProjectTitle"></h2>
+          <p class="modal-project-desc" id="modalProjectDesc"></p>
+          <div class="modal-tags-row" id="modalTagsRow"></div>
+        </div>
+
+        <!-- Right: Specs + CTA -->
+        <div class="modal-content-right">
+          <div class="modal-specs-grid">
+            <div class="modal-spec-box">
+              <i class="fas fa-calendar-days"></i>
+              <span class="modal-spec-label">Timeline</span>
+              <span class="modal-spec-val" id="modalTimeline"></span>
+            </div>
+            <div class="modal-spec-box">
+              <i class="fas fa-ruler-combined"></i>
+              <span class="modal-spec-label">Project Size</span>
+              <span class="modal-spec-val" id="modalSqft"></span>
+            </div>
+            <div class="modal-spec-box modal-spec-wide">
+              <i class="fas fa-layer-group"></i>
+              <span class="modal-spec-label">Materials Used</span>
+              <span class="modal-spec-val" id="modalMaterials"></span>
+            </div>
+          </div>
+          <a href="#lead-form" class="modal-cta-btn" id="modalCtaBtn">
+            <span>Build Something Like This</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- FAQ SECTION (SECOND LAST ABOVE FOOTER AS REQUESTED) -->
   <section id="faq" class="faq-section">
