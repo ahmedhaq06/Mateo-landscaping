@@ -425,9 +425,9 @@ h6 {
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg,
-      rgba(10, 12, 14, 0.78) 0%,
-      rgba(10, 12, 14, 0.88) 65%,
-      var(--bg-dark) 100%);
+      rgba(10, 12, 14, 0.45) 0%,
+      rgba(10, 12, 14, 0.25) 50%,
+      rgba(10, 12, 14, 0.82) 100%);
 }
 
 .hero-content {
@@ -440,15 +440,17 @@ h6 {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(23, 26, 33, 0.9);
-  border: 1px solid var(--border-color);
+  background: rgba(15, 18, 24, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(212, 175, 55, 0.4);
   padding: 8px 18px;
   border-radius: 6px;
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--gold-light);
   margin-bottom: 24px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 .hero-badge i {
@@ -461,13 +463,16 @@ h6 {
   margin-bottom: 24px;
   line-height: 1.08;
   color: #FFFFFF;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.95), 0 2px 8px rgba(0, 0, 0, 0.9);
 }
 
 .hero p.hero-desc {
   font-size: clamp(1.1rem, 2vw, 1.3rem);
-  color: var(--text-muted);
+  color: #F1F5F9;
   margin-bottom: 40px;
   max-width: 720px;
+  line-height: 1.6;
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.95);
   font-weight: 400;
 }
 
@@ -575,7 +580,7 @@ h6 {
 .services-intro-text {
   font-family: var(--font-body);
   font-size: 1.15rem;
-  color: var(--text-muted);
+  color: #E2E8F0;
   line-height: 1.7;
   margin-top: 16px;
 }
@@ -584,51 +589,59 @@ h6 {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   flex-wrap: wrap;
   margin-bottom: 48px;
 }
 
 .filter-btn {
-  background: #1D212A;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--text-muted);
-  padding: 12px 24px;
+  background: #222733;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  color: #FFFFFF;
+  padding: 13px 26px;
   border-radius: 50px;
   font-family: var(--font-accent);
-  font-size: 0.85rem;
-  font-weight: 600;
+  font-size: 0.88rem;
+  font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
 }
 
 .filter-btn i {
   color: var(--gold-primary);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .filter-btn:hover {
-  background: #252B37;
-  border-color: rgba(212, 175, 55, 0.4);
+  background: rgba(212, 175, 55, 0.2);
+  border-color: var(--gold-primary);
   color: #FFFFFF;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.25);
+}
+
+.filter-btn:hover i {
+  transform: scale(1.15);
 }
 
 .filter-btn.active {
-  background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-dark) 100%);
-  color: #0D0F12;
-  border-color: var(--gold-primary);
-  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
-  font-weight: 700;
+  background: linear-gradient(135deg, #FFD700 0%, #D4AF37 50%, #B8860B 100%);
+  color: #050608;
+  border-color: #FFE680;
+  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.5), 0 0 15px rgba(255, 215, 0, 0.4);
+  font-weight: 800;
+  transform: translateY(-2px);
 }
 
 .filter-btn.active i {
-  color: #0D0F12;
+  color: #050608;
 }
 
 .services-catalog-grid {
