@@ -358,36 +358,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ===================================================================
-  // 6.5 SERVICES CATEGORY FILTER HANDLER
+  // 7. SERVICE MATRIX INTERACTIVE SHOWCASE & CATEGORY FILTER HANDLER
   // ===================================================================
   const filterBtns = document.querySelectorAll('.filter-btn');
-  const serviceCards = document.querySelectorAll('.service-catalog-card');
-
-  if (filterBtns.length && serviceCards.length) {
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const filter = btn.getAttribute('data-filter');
-
-        // Update active button state
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        // Filter service cards
-        serviceCards.forEach(card => {
-          const categories = card.getAttribute('data-category') || '';
-          if (filter === 'all' || categories.includes(filter)) {
-            card.classList.remove('hidden');
-          } else {
-            card.classList.add('hidden');
-          }
-        });
-      });
-    });
-  }
-
-  // ===================================================================
-  // 7. SERVICE MATRIX INTERACTIVE SHOWCASE HANDLER
-  // ===================================================================
   const matrixItems = document.querySelectorAll('.matrix-item');
   const matrixDisplay = document.getElementById('matrixDisplay');
   const matrixIndexTag = document.getElementById('matrixIndexTag');
@@ -399,11 +372,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const matrixBars = document.getElementById('matrixBars');
 
   if (matrixItems.length && matrixDisplay) {
-    matrixItems.forEach(item => {
-      item.addEventListener('mouseenter', () => activateMatrixItem(item));
-      item.addEventListener('click', () => activateMatrixItem(item));
-    });
-
     function activateMatrixItem(item) {
       matrixItems.forEach(el => el.classList.remove('active'));
       item.classList.add('active');
@@ -439,6 +407,41 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         matrixBars.innerHTML = barsHtml;
       }
+    }
+
+    matrixItems.forEach(item => {
+      item.addEventListener('mouseenter', () => activateMatrixItem(item));
+      item.addEventListener('click', () => activateMatrixItem(item));
+    });
+
+    if (filterBtns.length) {
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const filter = btn.getAttribute('data-filter');
+
+          // Update active button state
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          let firstVisibleItem = null;
+
+          // Filter matrix items
+          matrixItems.forEach(item => {
+            const categories = item.getAttribute('data-category') || '';
+            if (filter === 'all' || categories.includes(filter)) {
+              item.classList.remove('hidden');
+              if (!firstVisibleItem) firstVisibleItem = item;
+            } else {
+              item.classList.add('hidden');
+            }
+          });
+
+          // Automatically activate first visible item in matrix showcase
+          if (firstVisibleItem) {
+            activateMatrixItem(firstVisibleItem);
+          }
+        });
+      });
     }
   }
 

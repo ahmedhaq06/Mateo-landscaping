@@ -828,6 +828,29 @@ h6 {
   flex-direction: column;
   background: #1A1E26;
   border-right: 1px solid var(--border-color);
+  max-height: 560px;
+  overflow-y: auto;
+}
+
+.matrix-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.matrix-sidebar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.matrix-sidebar::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.3);
+  border-radius: 3px;
+}
+
+.matrix-sidebar::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-primary);
+}
+
+.matrix-item.hidden {
+  display: none !important;
 }
 
 .matrix-item {
