@@ -358,6 +358,34 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ===================================================================
+  // 6.5 SERVICES CATEGORY FILTER HANDLER
+  // ===================================================================
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const serviceCards = document.querySelectorAll('.service-catalog-card');
+
+  if (filterBtns.length && serviceCards.length) {
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+
+        // Update active button state
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // Filter service cards
+        serviceCards.forEach(card => {
+          const categories = card.getAttribute('data-category') || '';
+          if (filter === 'all' || categories.includes(filter)) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+  }
+
+  // ===================================================================
   // 7. SERVICE MATRIX INTERACTIVE SHOWCASE HANDLER
   // ===================================================================
   const matrixItems = document.querySelectorAll('.matrix-item');

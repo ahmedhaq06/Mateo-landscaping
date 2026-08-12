@@ -150,14 +150,174 @@
     </div>
   </section>
 
-  <!-- SERVICES SECTION: SERVICE MATRIX SHOWCASE -->
+  <!-- SERVICES SECTION: FULL SERVICE CATALOG & SERVICE MATRIX SHOWCASE -->
   <section id="services" class="service-matrix-section">
     <div class="matrix-grid-bg"></div>
-    <div class="container">
-      <div class="matrix-header">
+    <div class="container" style="position: relative; z-index: 2;">
+      
+      <!-- CLIENT SPECIFIED HEADER & INTRO TEXT -->
+      <div class="services-intro-box">
+        <span class="matrix-tag">OUR SERVICES</span>
+        <h2 class="matrix-title" style="margin-top: 8px;">Our team is dedicated to providing you with reliable and professional services to meet all your needs.</h2>
+        <p class="services-intro-text">
+          Discover how we can improve your outdoor living spaces. No matter what you need us to do for your landscape, we guarantee quality service. You can hire us for...
+        </p>
+      </div>
+
+      <!-- CATEGORY FILTER TABS -->
+      <div class="services-filter-nav">
+        <button class="filter-btn active" data-filter="all">
+          <i class="fas fa-grid-2"></i> All Services
+        </button>
+        <button class="filter-btn" data-filter="landscapes">
+          <i class="fas fa-tree"></i> Landscapes
+        </button>
+        <button class="filter-btn" data-filter="hardscapes">
+          <i class="fas fa-cubes"></i> Hardscapes
+        </button>
+        <button class="filter-btn" data-filter="turf">
+          <i class="fas fa-leaf"></i> Artificial Turf
+        </button>
+      </div>
+
+      <!-- 10 SERVICES CATALOG GRID -->
+      <div class="services-catalog-grid">
+        <!-- 1. Irrigation Services -->
+        <div class="service-catalog-card" data-category="landscapes">
+          <div class="service-card-top">
+            <div class="service-card-icon"><i class="fas fa-faucet-drip"></i></div>
+            <span class="service-cat-pill">Landscapes</span>
+          </div>
+          <h3 class="service-catalog-title">Irrigation Services</h3>
+          <p class="service-catalog-desc">
+            Custom drip systems, automated watering valves, backflow preventers, and water-conserving desert irrigation systems engineered for Arizona plants.
+          </p>
+          <a href="#lead-form" class="service-catalog-cta">Request Quote <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <!-- 2. Yard Cleanup Services -->
+        <div class="service-catalog-card" data-category="landscapes turf">
+          <div class="service-card-top">
+            <div class="service-card-icon"><i class="fas fa-broom-ball"></i></div>
+            <span class="service-cat-pill">Landscapes</span>
+          </div>
+          <h3 class="service-catalog-title">Yard Cleanup Services</h3>
+          <p class="service-catalog-desc">
+            Comprehensive seasonal property cleanups, debris and leaf removal, monsoon storm cleanup, and overgrown yard rejuvenation.
+          </p>
+          <a href="#lead-form" class="service-catalog-cta">Request Quote <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <!-- 3. Weed Removal Services -->
+        <div class="service-catalog-card" data-category="landscapes">
+          <div class="service-card-top">
+            <div class="service-card-icon"><i class="fas fa-seedling"></i></div>
+            <span class="service-cat-pill">Landscapes</span>
+          </div>
+          <h3 class="service-catalog-title">Weed Removal Services</h3>
+          <p class="service-catalog-desc">
+            Targeted pre-emergent weed control treatments and post-emergent manual weed eradication to keep gravel and rock yards spotless.
+          </p>
+          <a href="#lead-form" class="service-catalog-cta">Request Quote <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <!-- 4. Landscape Design Services -->
+        <div class="service-catalog-card" data-category="landscapes hardscapes">
+          <div class="service-card-top">
+            <div class="service-card-icon"><i class="fas fa-compass-drafting"></i></div>
+            <span class="service-cat-pill">Landscapes & Hardscapes</span>
+          </div>
+          <h3 class="service-catalog-title">Landscape Design Services</h3>
+          <p class="service-catalog-desc">
+            Custom 2D layout planning and 3D architectural renderings tailored to your property’s dimensions, shade lines, and lifestyle needs.
+          </p>
+          <a href="#lead-form" class="service-catalog-cta">Request Quote <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <!-- 5. Landscape Lighting Services -->
+        <div class="service-catalog-card" data-category="landscapes hardscapes">
+          <div class="service-card-top">
+            <div class="service-card-icon"><i class="fas fa-lightbulb"></i></div>
+            <span class="service-cat-pill">Landscapes & Hardscapes</span>
+          </div>
+          <h3 class="service-catalog-title">Landscape Lighting Services</h3>
+          <p class="service-catalog-desc">
+            Low-voltage architectural LED lighting, desert tree uplighting, pathway safety lights, and smart automated night illumination systems.
+          </p>
+          <a href="#lead-form" class="service-catalog-cta">Request Quote <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <!-- 6. Lawn Maintenance Services -->
+        <div class="service-catalog-card" data-category="landscapes">
+          <div class="service-card-top">
+            <div class="service-card-icon"><i class="fas fa-scissors"></i></div>
+            <span class="service-cat-pill">Landscapes</span>
+          </div>
+          <h3 class="service-catalog-title">Lawn Maintenance Services</h3>
+          <p class="service-catalog-desc">
+            Scheduled professional lawn mowing, perimeter edging, seasonal fertilizing, overseeding, and aeration for healthy turf.
+          </p>
+          <a href="#lead-form" class="service-catalog-cta">Request Quote <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <!-- 7. Sprinkler Installation Services -->
+        <div class="service-catalog-card" data-category="landscapes">
+          <div class="service-card-top">
+            <div class="service-card-icon"><i class="fas fa-shower"></i></div>
+            <span class="service-cat-pill">Landscapes</span>
+          </div>
+          <h3 class="service-catalog-title">Sprinkler Installation Services</h3>
+          <p class="service-catalog-desc">
+            Automated sprinkler head layout installation, smart Wi-Fi timer configuration, zone optimization, and leak troubleshooting.
+          </p>
+          <a href="#lead-form" class="service-catalog-cta">Request Quote <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <!-- 8. Hardscaping Installation Services -->
+        <div class="service-catalog-card" data-category="hardscapes">
+          <div class="service-card-top">
+            <div class="service-card-icon"><i class="fas fa-cubes"></i></div>
+            <span class="service-cat-pill">Hardscapes</span>
+          </div>
+          <h3 class="service-catalog-title">Hardscaping Installation Services</h3>
+          <p class="service-catalog-desc">
+            Travertine patios, paver driveways, fire pits, retaining block walls, pool deck tile coping, and custom outdoor kitchen masonry.
+          </p>
+          <a href="#lead-form" class="service-catalog-cta">Request Quote <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <!-- 9. Artificial Grass & Turf Installation Services -->
+        <div class="service-catalog-card" data-category="turf">
+          <div class="service-card-top">
+            <div class="service-card-icon"><i class="fas fa-leaf"></i></div>
+            <span class="service-cat-pill">Artificial Turf</span>
+          </div>
+          <h3 class="service-catalog-title">Artificial Grass & Turf Installation Services</h3>
+          <p class="service-catalog-desc">
+            Ultra-realistic heat-shield synthetic turf lawns, pet activity turf, putting greens, and zero-water backyard grass solutions.
+          </p>
+          <a href="#lead-form" class="service-catalog-cta">Request Quote <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <!-- 10. Tree Planting, Removal & Trimming Services -->
+        <div class="service-catalog-card" data-category="landscapes">
+          <div class="service-card-top">
+            <div class="service-card-icon"><i class="fas fa-tree"></i></div>
+            <span class="service-cat-pill">Landscapes</span>
+          </div>
+          <h3 class="service-catalog-title">Tree Planting, Removal & Trimming Services</h3>
+          <p class="service-catalog-desc">
+            Professional desert tree pruning, palm tree skinning/trimming, safe hazardous branch removal, and desert-adapted tree planting.
+          </p>
+          <a href="#lead-form" class="service-catalog-cta">Request Quote <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- INTERACTIVE SERVICE MATRIX SHOWCASE HEADER -->
+      <div class="matrix-header" style="margin-top: 40px;">
         <div class="matrix-header-left">
-          <span class="matrix-tag">CAPABILITIES</span>
-          <h2 class="matrix-title">Service Matrix</h2>
+          <span class="matrix-tag">INTERACTIVE SHOWCASE</span>
+          <h2 class="matrix-title">Featured Hardscape & Turf Matrix</h2>
         </div>
         <span class="matrix-index-tag" id="matrixIndexTag">INDEX 01 / 06</span>
       </div>
@@ -683,34 +843,82 @@
               </label>
               <div class="options-grid">
                 <label class="option-card">
-                  <input type="checkbox" name="services" value="Pavers & Travertine Patio">
+                  <input type="checkbox" name="services" value="Irrigation Services">
                   <div class="option-content">
                     <div class="option-check"></div>
-                    <span>Pavers & Travertine</span>
+                    <span>Irrigation Services</span>
                   </div>
                 </label>
 
                 <label class="option-card">
-                  <input type="checkbox" name="services" value="Artificial Synthetic Turf">
+                  <input type="checkbox" name="services" value="Yard Cleanup Services">
                   <div class="option-content">
                     <div class="option-check"></div>
-                    <span>Synthetic Turf</span>
+                    <span>Yard Cleanup Services</span>
                   </div>
                 </label>
 
                 <label class="option-card">
-                  <input type="checkbox" name="services" value="BBQ & Outdoor Kitchen">
+                  <input type="checkbox" name="services" value="Weed Removal Services">
                   <div class="option-content">
                     <div class="option-check"></div>
-                    <span>BBQ & Outdoor Kitchen</span>
+                    <span>Weed Removal Services</span>
                   </div>
                 </label>
 
                 <label class="option-card">
-                  <input type="checkbox" name="services" value="Fire Pit & Hardscape Walls">
+                  <input type="checkbox" name="services" value="Landscape Design Services">
                   <div class="option-content">
                     <div class="option-check"></div>
-                    <span>Fire Pit & Block Walls</span>
+                    <span>Landscape Design</span>
+                  </div>
+                </label>
+
+                <label class="option-card">
+                  <input type="checkbox" name="services" value="Landscape Lighting Services">
+                  <div class="option-content">
+                    <div class="option-check"></div>
+                    <span>Landscape Lighting</span>
+                  </div>
+                </label>
+
+                <label class="option-card">
+                  <input type="checkbox" name="services" value="Lawn Maintenance Services">
+                  <div class="option-content">
+                    <div class="option-check"></div>
+                    <span>Lawn Maintenance</span>
+                  </div>
+                </label>
+
+                <label class="option-card">
+                  <input type="checkbox" name="services" value="Sprinkler Installation Services">
+                  <div class="option-content">
+                    <div class="option-check"></div>
+                    <span>Sprinkler Installation</span>
+                  </div>
+                </label>
+
+                <label class="option-card">
+                  <input type="checkbox" name="services" value="Hardscaping Installation Services">
+                  <div class="option-content">
+                    <div class="option-check"></div>
+                    <span>Hardscaping Installation</span>
+                  </div>
+                </label>
+
+                <label class="option-card">
+                  <input type="checkbox" name="services" value="Artificial Grass and Turf Installation">
+                  <div class="option-content">
+                    <div class="option-check"></div>
+                    <span>Artificial Grass & Turf</span>
+                  </div>
+                </label>
+
+                <label class="option-card">
+                  <input type="checkbox" name="services" value="Tree Planting, Removal and Trimming">
+                  <div class="option-content">
+                    <div class="option-check"></div>
+                    <span>Tree Planting & Trimming</span>
                   </div>
                 </label>
               </div>
