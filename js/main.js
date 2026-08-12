@@ -19,21 +19,36 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelector('.nav-links');
 
   if (mobileToggle && navLinks) {
-    mobileToggle.addEventListener('click', () => {
-      if (navLinks.style.display === 'flex') {
-        navLinks.style.display = 'none';
-      } else {
-        navLinks.style.display = 'flex';
-        navLinks.style.flexDirection = 'column';
-        navLinks.style.position = 'absolute';
-        navLinks.style.top = '100%';
-        navLinks.style.left = '0';
-        navLinks.style.width = '100%';
-        navLinks.style.background = '#12151A';
-        navLinks.style.padding = '20px';
-        navLinks.style.borderBottom = '1px solid rgba(212, 175, 55, 0.25)';
-        navLinks.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isActive = navLinks.classList.toggle('active');
+      mobileToggle.classList.toggle('active', isActive);
+
+      const icon = mobileToggle.querySelector('i');
+      if (icon) {
+        icon.className = isActive ? 'fas fa-xmark' : 'fas fa-bars';
       }
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!mobileToggle.contains(e.target) && !navLinks.contains(e.target)) {
+        navLinks.classList.remove('active');
+        mobileToggle.classList.remove('active');
+        const icon = mobileToggle.querySelector('i');
+        if (icon) icon.className = 'fas fa-bars';
+      }
+    });
+
+    // Close menu when clicking any nav link
+    const navItems = navLinks.querySelectorAll('a');
+    navItems.forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        mobileToggle.classList.remove('active');
+        const icon = mobileToggle.querySelector('i');
+        if (icon) icon.className = 'fas fa-bars';
+      });
     });
   }
 
