@@ -1279,22 +1279,56 @@ h6 {
   overflow: visible;
 }
 
-/* Arizona state shape */
-.az-state-fill {
-  fill: rgba(212, 175, 55, 0.05);
-  stroke: none;
-}
-
-.az-state-outline {
+/* Circular orbit rings */
+.orbit-ring {
   fill: none;
-  stroke: rgba(212, 175, 55, 0.25);
-  stroke-width: 1.5;
-  stroke-dasharray: 8 4;
+  stroke-width: 1;
 }
 
-.az-grid-line {
-  stroke: rgba(255, 255, 255, 0.04);
+.orbit-ring-outer {
+  stroke: rgba(212, 175, 55, 0.18);
+  stroke-dasharray: 6 6;
+}
+
+.orbit-ring-inner {
+  stroke: rgba(212, 175, 55, 0.1);
+  stroke-dasharray: 4 8;
+}
+
+.orbit-ring-center {
+  stroke: rgba(212, 175, 55, 0.22);
+}
+
+/* Spoke lines from center to pins */
+.orbit-spoke {
+  stroke: rgba(212, 175, 55, 0.14);
   stroke-width: 1;
+  stroke-dasharray: 4 4;
+}
+
+/* Center hub */
+.center-hub-fill {
+  fill: rgba(212, 175, 55, 0.08);
+  stroke: rgba(212, 175, 55, 0.3);
+  stroke-width: 1.2;
+}
+
+.center-hub-label-top {
+  font-family: var(--font-accent);
+  font-size: 7px;
+  font-weight: 700;
+  fill: var(--gold-primary);
+  text-anchor: middle;
+  letter-spacing: 1px;
+}
+
+.center-hub-label-bot {
+  font-family: var(--font-accent);
+  font-size: 6px;
+  font-weight: 600;
+  fill: rgba(212, 175, 55, 0.7);
+  text-anchor: middle;
+  letter-spacing: 1px;
 }
 
 /* Map Pins */

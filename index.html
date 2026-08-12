@@ -592,64 +592,81 @@
       <!-- LEFT: SVG Arizona Map -->
       <div class="nbhd-svg-panel">
         <div class="nbhd-svg-container">
-          <!-- Arizona state SVG silhouette -->
-          <svg id="azMapSvg" viewBox="0 0 500 560" xmlns="http://www.w3.org/2000/svg" class="az-svg">
-            <!-- Arizona state outline path -->
-            <path class="az-state-fill" d="M 60,10 L 460,10 L 460,360 L 380,360 L 380,420 L 120,420 L 60,260 Z"/>
-            <path class="az-state-outline" d="M 60,10 L 460,10 L 460,360 L 380,360 L 380,420 L 120,420 L 60,260 Z"/>
+          <!-- Circular neighborhood arrangement -->
+          <svg id="azMapSvg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" class="az-svg">
 
-            <!-- Grid lines decorative -->
-            <line x1="0" y1="140" x2="500" y2="140" class="az-grid-line"/>
-            <line x1="0" y1="280" x2="500" y2="280" class="az-grid-line"/>
-            <line x1="166" y1="0" x2="166" y2="560" class="az-grid-line"/>
-            <line x1="333" y1="0" x2="333" y2="560" class="az-grid-line"/>
+            <!-- Outer orbit ring -->
+            <circle cx="200" cy="200" r="145" class="orbit-ring orbit-ring-outer"/>
+            <!-- Inner orbit ring -->
+            <circle cx="200" cy="200" r="100" class="orbit-ring orbit-ring-inner"/>
+            <!-- Center dot ring -->
+            <circle cx="200" cy="200" r="38" class="orbit-ring orbit-ring-center"/>
 
-            <!-- Scottsdale pin — East of Phoenix -->
+            <!-- Spoke lines from center to each pin -->
+            <!-- Scottsdale: top (270°) → 200, 55 -->
+            <line x1="200" y1="200" x2="200" y2="55" class="orbit-spoke"/>
+            <!-- Fountain Hills: top-right (330°) → 200+145*cos(-30°), 200+145*sin(-30°) = 326, 128 -->
+            <line x1="200" y1="200" x2="326" y2="128" class="orbit-spoke"/>
+            <!-- Chandler: bottom-right (30°) → 326, 272 -->
+            <line x1="200" y1="200" x2="326" y2="272" class="orbit-spoke"/>
+            <!-- Gilbert: bottom (90°) → 200, 345 -->
+            <line x1="200" y1="200" x2="200" y2="345" class="orbit-spoke"/>
+            <!-- Arcadia: bottom-left (150°) → 74, 272 -->
+            <line x1="200" y1="200" x2="74" y2="272" class="orbit-spoke"/>
+            <!-- Paradise Valley: top-left (210°) → 74, 128 -->
+            <line x1="200" y1="200" x2="74" y2="128" class="orbit-spoke"/>
+
+            <!-- Center hub -->
+            <circle cx="200" cy="200" r="32" class="center-hub-fill"/>
+            <text class="center-hub-label-top" x="200" y="196">PHOENIX</text>
+            <text class="center-hub-label-bot" x="200" y="208">METRO</text>
+
+            <!-- SCOTTSDALE pin — top, 270° -->
             <g class="az-map-pin" data-city="scottsdale" tabindex="0" role="button" aria-label="Scottsdale projects">
-              <circle class="pin-pulse-ring pin-pulse-1" cx="330" cy="210" r="22"/>
-              <circle class="pin-pulse-ring pin-pulse-2" cx="330" cy="210" r="16"/>
-              <circle class="pin-dot" cx="330" cy="210" r="9"/>
-              <text class="pin-label" x="330" y="196">Scottsdale</text>
+              <circle class="pin-pulse-ring pin-pulse-1" cx="200" cy="55" r="22"/>
+              <circle class="pin-pulse-ring pin-pulse-2" cx="200" cy="55" r="16"/>
+              <circle class="pin-dot" cx="200" cy="55" r="9"/>
+              <text class="pin-label" x="200" y="38">Scottsdale</text>
             </g>
 
-            <!-- Paradise Valley pin — Northwest of Scottsdale -->
-            <g class="az-map-pin" data-city="paradise-valley" tabindex="0" role="button" aria-label="Paradise Valley projects">
-              <circle class="pin-pulse-ring pin-pulse-1" cx="286" cy="193" r="20"/>
-              <circle class="pin-pulse-ring pin-pulse-2" cx="286" cy="193" r="14"/>
-              <circle class="pin-dot" cx="286" cy="193" r="8"/>
-              <text class="pin-label" x="286" y="180">Paradise Valley</text>
-            </g>
-
-            <!-- Fountain Hills pin — East side -->
+            <!-- FOUNTAIN HILLS pin — top-right, 330° -->
             <g class="az-map-pin" data-city="fountain-hills" tabindex="0" role="button" aria-label="Fountain Hills projects">
-              <circle class="pin-pulse-ring pin-pulse-1" cx="375" cy="183" r="20"/>
-              <circle class="pin-pulse-ring pin-pulse-2" cx="375" cy="183" r="14"/>
-              <circle class="pin-dot" cx="375" cy="183" r="8"/>
-              <text class="pin-label" x="375" y="170">Fountain Hills</text>
+              <circle class="pin-pulse-ring pin-pulse-1" cx="326" cy="128" r="22"/>
+              <circle class="pin-pulse-ring pin-pulse-2" cx="326" cy="128" r="16"/>
+              <circle class="pin-dot" cx="326" cy="128" r="9"/>
+              <text class="pin-label" x="352" y="124">Fountain Hills</text>
             </g>
 
-            <!-- Arcadia pin — Central-east Phoenix -->
-            <g class="az-map-pin" data-city="arcadia" tabindex="0" role="button" aria-label="Arcadia projects">
-              <circle class="pin-pulse-ring pin-pulse-1" cx="262" cy="222" r="18"/>
-              <circle class="pin-pulse-ring pin-pulse-2" cx="262" cy="222" r="13"/>
-              <circle class="pin-dot" cx="262" cy="222" r="7"/>
-              <text class="pin-label" x="262" y="210">Arcadia</text>
-            </g>
-
-            <!-- Gilbert pin — Southeast -->
-            <g class="az-map-pin" data-city="gilbert" tabindex="0" role="button" aria-label="Gilbert projects">
-              <circle class="pin-pulse-ring pin-pulse-1" cx="335" cy="275" r="20"/>
-              <circle class="pin-pulse-ring pin-pulse-2" cx="335" cy="275" r="14"/>
-              <circle class="pin-dot" cx="335" cy="275" r="8"/>
-              <text class="pin-label" x="335" y="263">Gilbert</text>
-            </g>
-
-            <!-- Chandler pin — South of Gilbert -->
+            <!-- CHANDLER pin — bottom-right, 30° -->
             <g class="az-map-pin" data-city="chandler" tabindex="0" role="button" aria-label="Chandler projects">
-              <circle class="pin-pulse-ring pin-pulse-1" cx="298" cy="300" r="20"/>
-              <circle class="pin-pulse-ring pin-pulse-2" cx="298" cy="300" r="14"/>
-              <circle class="pin-dot" cx="298" cy="300" r="8"/>
-              <text class="pin-label" x="298" y="288">Chandler</text>
+              <circle class="pin-pulse-ring pin-pulse-1" cx="326" cy="272" r="22"/>
+              <circle class="pin-pulse-ring pin-pulse-2" cx="326" cy="272" r="16"/>
+              <circle class="pin-dot" cx="326" cy="272" r="9"/>
+              <text class="pin-label" x="352" y="276">Chandler</text>
+            </g>
+
+            <!-- GILBERT pin — bottom, 90° -->
+            <g class="az-map-pin" data-city="gilbert" tabindex="0" role="button" aria-label="Gilbert projects">
+              <circle class="pin-pulse-ring pin-pulse-1" cx="200" cy="345" r="22"/>
+              <circle class="pin-pulse-ring pin-pulse-2" cx="200" cy="345" r="16"/>
+              <circle class="pin-dot" cx="200" cy="345" r="9"/>
+              <text class="pin-label" x="200" y="370">Gilbert</text>
+            </g>
+
+            <!-- ARCADIA pin — bottom-left, 150° -->
+            <g class="az-map-pin" data-city="arcadia" tabindex="0" role="button" aria-label="Arcadia projects">
+              <circle class="pin-pulse-ring pin-pulse-1" cx="74" cy="272" r="22"/>
+              <circle class="pin-pulse-ring pin-pulse-2" cx="74" cy="272" r="16"/>
+              <circle class="pin-dot" cx="74" cy="272" r="9"/>
+              <text class="pin-label" x="48" y="276">Arcadia</text>
+            </g>
+
+            <!-- PARADISE VALLEY pin — top-left, 210° -->
+            <g class="az-map-pin" data-city="paradise-valley" tabindex="0" role="button" aria-label="Paradise Valley projects">
+              <circle class="pin-pulse-ring pin-pulse-1" cx="74" cy="128" r="22"/>
+              <circle class="pin-pulse-ring pin-pulse-2" cx="74" cy="128" r="16"/>
+              <circle class="pin-dot" cx="74" cy="128" r="9"/>
+              <text class="pin-label" x="48" y="124">Paradise Valley</text>
             </g>
           </svg>
 
