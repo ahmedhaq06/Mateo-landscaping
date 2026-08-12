@@ -127,11 +127,10 @@ h6 {
 }
 
 .text-gold {
-  color: #FFD700;
-  background: linear-gradient(135deg, #FFF7D6 0%, #FFD700 40%, #E5B800 100%);
+  color: var(--gold-primary);
+  background: linear-gradient(135deg, #F3E5AB 0%, var(--gold-primary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 8px rgba(255, 215, 0, 0.3));
 }
 
 .section-tag {
@@ -464,15 +463,6 @@ h6 {
   margin-bottom: 24px;
   line-height: 1.08;
   color: #FFFFFF;
-  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.95), 0 2px 8px rgba(0, 0, 0, 0.9);
-}
-
-.hero h1 .text-gold {
-  color: #FFD700;
-  background: linear-gradient(135deg, #FFF8DC 0%, #FFD700 45%, #E6B800 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 4px 18px rgba(0, 0, 0, 0.98)) drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
 }
 
 .hero p.hero-desc {
